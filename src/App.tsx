@@ -1,14 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import {
-  Sparkles, ShieldAlert, ChevronUp, Github, Linkedin, Mail, Menu, X,
-  Terminal, Code2, Cpu, FileText, Volume2, VolumeX, Pause, Play
+  Sparkles, ChevronUp, Github, Linkedin, Menu, X,
+  FileText, Volume2, VolumeX, Sun, Moon
 } from "lucide-react";
 
-import LiveTelemetryHeader from "./components/LiveTelemetryHeader.tsx";
-import TerminalCliModal from "./components/TerminalCliModal.tsx";
 import ResumeModal from "./components/ResumeModal.tsx";
-
 import HeroSection from "./components/HeroSection.tsx";
 import AboutSection from "./components/AboutSection.tsx";
 import SkillsSection from "./components/SkillsSection.tsx";
@@ -20,15 +17,19 @@ import AiAssistant from "./components/AiAssistant.tsx";
 import ExperienceEducationSection from "./components/ExperienceEducationSection.tsx";
 
 import { portfolioData } from "./data.js";
+import CursorGlow from "./components/CursorGlow.tsx";
+import FloatingAssistant from "./components/FloatingAssistant.tsx";
+import ParticlesBackground from "./components/ParticlesBackground.tsx";
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   // Modals state
-  const [isCliOpen, setIsCliOpen] = useState(false);
   const [isResumeOpen, setIsResumeOpen] = useState(false);
+  const [theme, setTheme] = useState("dark");
 
   // 30-Second Voice Speech Intro State
   const [isSpeakingIntro, setIsSpeakingIntro] = useState(false);
@@ -43,7 +44,6 @@ export default function App() {
     }
   }, []);
 
-  // 30-Second Speech Intro Text
   const introSpeechScript = `Welcome to my portfolio! I am Ponabinanth S, a Computer Science Engineering student and Java Full Stack Developer specializing in Spring Boot, AI engineering, and decentralized blockchain systems. I build high-performance microservices, RAG-powered intelligent tutors, and edge TensorFlow security applications. Feel free to explore my case studies, test live sandboxes, or chat with my AI twin. Thank you for visiting!`;
 
   const playVoiceIntro = () => {
@@ -77,7 +77,6 @@ export default function App() {
     }
   };
 
-  // Trigger 30s Voice Intro on first user click anywhere on the page
   useEffect(() => {
     const handleFirstUserInteraction = () => {
       if (!hasSpokenOnFirstClickRef.current) {
@@ -92,7 +91,6 @@ export default function App() {
     };
   }, []);
 
-  // Scroll listener
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -102,22 +100,11 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Keyboard shortcut Ctrl + K / Cmd + K to open developer CLI
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
-        e.preventDefault();
-        setIsCliOpen((prev) => !prev);
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
-
   const scrollToSection = (id: string) => {
+    setActiveSection(id);
     const element = document.getElementById(id);
     if (element) {
-      const offset = 100;
+      const offset = 80;
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -139,7 +126,6 @@ export default function App() {
     }
   };
 
-  // Navigation Links without Coding Profiles
   const navLinks = [
     { label: "Home", id: "home" },
     { label: "AI Assistant", id: "ai-recruiter-mode" },
@@ -152,134 +138,118 @@ export default function App() {
   ];
 
   return (
-    <div className="bg-[#030712] text-gray-100 min-h-screen font-sans tech-grid overflow-x-hidden selection:bg-cyan-500/20 selection:text-cyan-400">
+    <div className={`${theme} min-h-screen font-sans overflow-x-hidden selection:bg-blue-500/20 selection:text-blue-500`}>
       
-      {/* 1. REAL-TIME TELEMETRY TOP BAR */}
-      <LiveTelemetryHeader
-        onOpenCli={() => setIsCliOpen(true)}
-        onOpenResume={() => setIsResumeOpen(true)}
-      />
+      <CursorGlow />
+      <ParticlesBackground />
 
-      {/* 2. STICKY GLASS HEADER */}
       <header
-        className={`fixed top-[32px] sm:top-[28px] left-0 w-full z-40 transition-all duration-300 ${
-          scrolled ? "bg-[#030712]/85 backdrop-blur-md border-b border-white/5 py-3" : "bg-transparent py-4"
+        className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
+          scrolled ? "bg-[var(--glass-bg)] backdrop-blur-md border-b border-[var(--glass-border)] py-3" : "bg-transparent py-5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           
-          {/* Brand Logo */}
-          <button
-            onClick={() => scrollToSection("home")}
-            className="flex items-center gap-2 text-left cursor-pointer group"
-          >
-            <div className="w-8 h-8 rounded-lg bg-cyan-500 text-slate-950 font-black flex items-center justify-center font-display shadow-md shadow-cyan-500/10">
-              P
-            </div>
-            <div>
-              <span className="block font-display font-bold text-sm tracking-tight text-white group-hover:text-cyan-400 transition-all">
-                ABINANTH // DEV
-              </span>
-              <span className="block text-[8px] font-mono text-cyan-400 font-semibold tracking-wider -mt-0.5">FUTURE SOFTWARE ENGINEER</span>
-            </div>
-          </button>
+          <div className="w-10"></div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1 bg-white/5 px-2 py-1 rounded-2xl border border-white/5">
+          <nav className="hidden lg:flex items-center gap-1 bg-[var(--accent-glow)] px-2 py-1.5 rounded-full border border-[var(--glass-border)] shadow-[var(--glass-shadow)] backdrop-blur-xl">
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="text-xs font-semibold text-gray-400 hover:text-white px-2.5 py-1.5 rounded-xl hover:bg-white/5 transition-all cursor-pointer"
+                className={`relative text-xs font-medium px-4 py-2 rounded-full transition-all cursor-pointer ${
+                  activeSection === link.id ? "text-[var(--text-primary)]" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+                }`}
               >
-                {link.label === "AI Assistant" ? (
-                  <span className="flex items-center gap-1 text-cyan-400">
-                    <Sparkles className="h-3.5 w-3.5 fill-cyan-400/20" /> {link.label}
-                  </span>
-                ) : (
-                  link.label
+                {activeSection === link.id && (
+                  <motion.div
+                    layoutId="activeNavIndicator"
+                    className="absolute inset-0 bg-[var(--glass-bg)] shadow-sm rounded-full -z-10 border border-[var(--glass-border)]"
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                  />
                 )}
+                <span className="relative z-10 flex items-center gap-1.5">
+                  {link.label === "AI Assistant" && <Sparkles className="h-3.5 w-3.5" />}
+                  {link.label}
+                </span>
               </button>
             ))}
           </nav>
 
-          {/* Action triggers */}
           <div className="hidden md:flex items-center gap-2">
             <button
-              onClick={toggleVoiceIntro}
-              className={`p-2 rounded-xl transition-all cursor-pointer ${
-                isSpeakingIntro
-                  ? "bg-red-500 text-white animate-pulse"
-                  : "bg-white/5 text-cyan-400 hover:bg-cyan-500/10 border border-white/5"
-              }`}
-              title={isSpeakingIntro ? "Stop 30s AI Voice Introduction" : "Play 30s AI Voice Introduction"}
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="p-2.5 rounded-full bg-[var(--accent-glow)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--glass-border)] transition-all cursor-pointer shadow-sm hover:shadow-md"
+              title="Toggle Theme"
             >
-              {isSpeakingIntro ? <VolumeX className="h-4.5 w-4.5" /> : <Volume2 className="h-4.5 w-4.5" />}
+              {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </button>
 
             <button
-              onClick={() => setIsCliOpen(true)}
-              className="p-2 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/20 transition-all cursor-pointer"
-              title="Launch Developer CLI (Ctrl+K)"
+              onClick={toggleVoiceIntro}
+              className={`p-2.5 rounded-full transition-all cursor-pointer shadow-sm hover:shadow-md ${
+                isSpeakingIntro
+                  ? "bg-red-500 text-white animate-pulse"
+                  : "bg-[var(--accent-glow)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--glass-border)]"
+              }`}
+              title={isSpeakingIntro ? "Stop 30s AI Voice Introduction" : "Play 30s AI Voice Introduction"}
             >
-              <Terminal className="h-4.5 w-4.5" />
+              {isSpeakingIntro ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
             </button>
 
             <button
               onClick={() => setIsResumeOpen(true)}
-              className="p-2 rounded-xl bg-white/5 text-gray-300 hover:text-white border border-white/5 hover:border-white/10 transition-all cursor-pointer"
+              className="p-2.5 rounded-full bg-[var(--accent-glow)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--glass-border)] transition-all cursor-pointer shadow-sm hover:shadow-md"
               title="Preview Resume / CV"
             >
-              <FileText className="h-4.5 w-4.5 text-purple-400" />
+              <FileText className="h-4 w-4" />
             </button>
 
             <a
               href="https://github.com/Ponabinanth"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-xl bg-white/5 text-gray-400 hover:text-white border border-white/5 hover:border-white/10 transition-all"
+              className="p-2.5 rounded-full bg-[var(--accent-glow)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--glass-border)] transition-all cursor-pointer shadow-sm hover:shadow-md"
             >
-              <Github className="h-4.5 w-4.5" />
+              <Github className="h-4 w-4" />
             </a>
             <a
               href="https://www.linkedin.com/in/ponabinanths/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-xl bg-white/5 text-gray-400 hover:text-white border border-white/5 hover:border-white/10 transition-all"
+              className="p-2.5 rounded-full bg-[var(--accent-glow)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--glass-border)] transition-all cursor-pointer shadow-sm hover:shadow-md"
             >
-              <Linkedin className="h-4.5 w-4.5" />
+              <Linkedin className="h-4 w-4" />
             </a>
           </div>
 
-          {/* Mobile menu trigger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-xl bg-white/5 text-gray-400 hover:text-white border border-white/5"
+            className="lg:hidden p-2.5 rounded-full bg-[var(--accent-glow)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--glass-border)]"
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </header>
 
-      {/* Mobile Drawer Overlay */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden fixed top-[100px] left-0 w-full z-40 bg-[#030712] border-b border-white/10 backdrop-blur-md px-6 py-4 space-y-2"
+            className="lg:hidden fixed top-[72px] left-0 w-full z-40 bg-[var(--bg-primary)] border-b border-[var(--glass-border)] backdrop-blur-md px-6 py-4 space-y-2 shadow-lg"
           >
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="w-full text-left text-sm font-semibold text-gray-300 hover:text-white py-2.5 px-3 rounded-xl hover:bg-white/5 flex items-center gap-2"
+                className="w-full text-left text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] py-3 px-4 rounded-xl hover:bg-[var(--accent-glow)] flex items-center gap-2 transition-colors"
               >
                 {link.label === "AI Assistant" ? (
                   <>
-                    <Sparkles className="h-4 w-4 text-cyan-400" />
-                    <span className="text-cyan-400">{link.label}</span>
+                    <Sparkles className="h-4 w-4 text-blue-500" />
+                    <span className="text-blue-500">{link.label}</span>
                   </>
                 ) : (
                   link.label
@@ -287,46 +257,42 @@ export default function App() {
               </button>
             ))}
 
-            <div className="pt-2 border-t border-white/10 flex gap-2">
+            <div className="pt-4 mt-2 border-t border-[var(--glass-border)] flex gap-2">
               <button
-                onClick={toggleVoiceIntro}
-                className="flex-1 py-2 bg-cyan-500/20 text-cyan-400 rounded-xl text-xs font-bold border border-cyan-500/30 flex items-center justify-center gap-1.5"
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="flex-1 py-3 bg-[var(--accent-glow)] text-[var(--text-primary)] rounded-xl text-xs font-medium border border-[var(--glass-border)] flex items-center justify-center gap-2"
               >
-                <Volume2 className="h-4 w-4" /> {isSpeakingIntro ? "Stop 30s Intro" : "Play 30s Intro"}
+                {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />} Theme
               </button>
               <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  setIsCliOpen(true);
-                }}
-                className="flex-1 py-2 bg-white/5 text-white rounded-xl text-xs font-bold border border-white/10 flex items-center justify-center gap-1.5"
+                onClick={toggleVoiceIntro}
+                className="flex-1 py-3 bg-[var(--accent-glow)] text-[var(--text-primary)] rounded-xl text-xs font-medium border border-[var(--glass-border)] flex items-center justify-center gap-2"
               >
-                <Terminal className="h-4 w-4" /> Open CLI
+                <Volume2 className="h-4 w-4" /> Intro
               </button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Floating 30-Second Speech Toast Banner when speaking */}
       <AnimatePresence>
         {isSpeakingIntro && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
-            className="fixed bottom-6 left-6 z-50 bg-slate-900/95 border border-cyan-500/40 p-3.5 rounded-2xl shadow-2xl backdrop-blur-md flex items-center gap-3 font-mono text-xs max-w-sm text-white"
+            className="fixed bottom-6 left-6 z-50 bg-[var(--glass-bg)] border border-[var(--glass-border)] p-3.5 rounded-2xl shadow-xl backdrop-blur-xl flex items-center gap-3 font-sans text-xs max-w-sm text-[var(--text-primary)]"
           >
-            <div className="p-2 bg-cyan-500/20 rounded-xl text-cyan-400 animate-pulse">
+            <div className="p-2 bg-blue-500/10 rounded-xl text-blue-500 animate-pulse">
               <Volume2 className="h-5 w-5" />
             </div>
             <div className="flex-1">
-              <span className="block font-bold text-cyan-400 text-[11px]">30s AI Voice Intro Active...</span>
-              <span className="block text-[10px] text-gray-400 truncate">Synthesizing audio introduction about Ponabinanth S</span>
+              <span className="block font-semibold text-blue-500 text-[11px]">30s AI Voice Intro Active...</span>
+              <span className="block text-[10px] text-[var(--text-secondary)] truncate">Synthesizing audio introduction about Ponabinanth S</span>
             </div>
             <button
               onClick={stopVoiceIntro}
-              className="p-1 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg"
+              className="p-1.5 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--accent-glow)] rounded-lg transition-colors"
               title="Stop Speech"
             >
               <X className="h-4 w-4" />
@@ -335,72 +301,45 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* Interactive Developer CLI Modal */}
-      <TerminalCliModal
-        isOpen={isCliOpen}
-        onClose={() => setIsCliOpen(false)}
-        onNavigateSection={scrollToSection}
-      />
-
-      {/* CV / Resume Preview Modal */}
       <ResumeModal
         isOpen={isResumeOpen}
         onClose={() => setIsResumeOpen(false)}
       />
 
-      {/* Main Core Layout */}
-      <main className="pt-28 max-w-7xl mx-auto space-y-12">
+      <main className="pt-32 max-w-7xl mx-auto space-y-16 px-4 sm:px-6">
         
-        {/* 1. HERO HOME SECTION */}
         <HeroSection
           onScrollToSection={scrollToSection}
-          onOpenCli={() => setIsCliOpen(true)}
           onOpenResume={() => setIsResumeOpen(true)}
           isSpeakingIntro={isSpeakingIntro}
           onToggleVoiceIntro={toggleVoiceIntro}
         />
 
-        {/* 2. MAIN AI RECRUITER ENGINE */}
-        <div className="px-6 py-8">
+        <div className="py-8">
           <AiAssistant onSearchNavigation={handleSearchNavigation} />
         </div>
 
-        {/* 3. ABOUT SECTION & TIMELINE */}
         <AboutSection />
-
-        {/* 4. EXPERIENCE & EDUCATION */}
         <ExperienceEducationSection />
-
-        {/* 5. SKILLS PROGRESS */}
         <SkillsSection />
-
-        {/* 6. CASE STUDY PROJECTS WITH LIVE SANDBOXES */}
         <ProjectsSection onScrollToSection={scrollToSection} />
-
-        {/* 7. CREDENTIALS */}
         <CertificatesSection />
-
-        {/* 8. LIVE GITHUB TELEMETRY */}
         <GithubSection />
-
-        {/* 9. REAL-TIME CONTACT FORM */}
         <ContactSection />
 
       </main>
 
-      {/* COMPACT FOOTER */}
-      <footer className="border-t border-white/5 bg-slate-950/60 py-8 text-center text-xs text-gray-500 font-mono mt-20">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <footer className="border-t border-[var(--glass-border)] bg-[var(--bg-primary)] py-12 text-center text-sm text-[var(--text-secondary)] mt-32 transition-colors">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <p>© 2026 Ponabinanth S. Built with React, Spring Boot & Gemini 3.5 API.</p>
-          <div className="flex gap-4">
-            <a href="https://github.com/Ponabinanth" target="_blank" rel="noreferrer" className="hover:text-cyan-400">GitHub</a>
-            <a href="https://www.linkedin.com/in/ponabinanths/" target="_blank" rel="noreferrer" className="hover:text-cyan-400">LinkedIn</a>
-            <a href={`mailto:${portfolioData.email}`} className="hover:text-cyan-400">Email</a>
+          <div className="flex gap-6">
+            <a href="https://github.com/Ponabinanth" target="_blank" rel="noreferrer" className="hover:text-[var(--text-primary)] transition-colors">GitHub</a>
+            <a href="https://www.linkedin.com/in/ponabinanths/" target="_blank" rel="noreferrer" className="hover:text-[var(--text-primary)] transition-colors">LinkedIn</a>
+            <a href={`mailto:${portfolioData.email}`} className="hover:text-[var(--text-primary)] transition-colors">Email</a>
           </div>
         </div>
       </footer>
 
-      {/* Floating Scroll to Top tool */}
       <AnimatePresence>
         {showScrollTop && (
           <motion.button
@@ -408,13 +347,18 @@ export default function App() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="fixed bottom-6 right-6 z-40 p-3 rounded-xl bg-cyan-500 text-slate-950 font-bold hover:bg-cyan-400 hover:scale-110 active:scale-95 shadow-lg shadow-cyan-500/20 transition-all cursor-pointer"
+            className="fixed bottom-6 right-24 z-40 p-3.5 rounded-full bg-[var(--glass-bg)] text-[var(--text-primary)] border border-[var(--glass-border)] hover:bg-[var(--accent-glow)] hover:scale-105 active:scale-95 shadow-lg backdrop-blur-md transition-all cursor-pointer"
             title="Scroll to Top"
           >
-            <ChevronUp className="h-5 w-5 stroke-[2.5]" />
+            <ChevronUp className="h-5 w-5 stroke-[2]" />
           </motion.button>
         )}
       </AnimatePresence>
+
+      <FloatingAssistant 
+        onNavigateSection={scrollToSection} 
+        onOpenResume={() => setIsResumeOpen(true)} 
+      />
 
     </div>
   );

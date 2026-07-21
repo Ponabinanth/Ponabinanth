@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { portfolioData, Project } from "../data.js";
 import {
   Github, ExternalLink, Cpu, Layers, ShieldAlert, Sparkles, Code2,
-  CheckCircle2, ArrowRight, Play, Terminal, HelpCircle, Plus, Minus,
+  CheckCircle2, ArrowRight, Play, Code, HelpCircle, Plus, Minus,
   RefreshCw, Volume2, ShieldCheck, Zap, Server, Database, Activity
 } from "lucide-react";
 
@@ -137,9 +137,9 @@ export default function ProjectsSection({ onScrollToSection }: ProjectsSectionPr
             <Sparkles className="h-3.5 w-3.5" />
             LIVE INTERACTIVE CASE STUDIES
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-white">Full Stack & AI Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-display text-primary">Full Stack & AI Projects</h2>
           <div className="w-16 h-1 bg-cyan-500 mx-auto mt-3 rounded-full" />
-          <p className="text-gray-400 text-xs mt-2 uppercase tracking-widest">Test live interactive sandboxes directly in the portfolio</p>
+          <p className="text-secondary text-xs mt-2 uppercase tracking-widest">Test live interactive sandboxes directly in the portfolio</p>
         </div>
 
         {/* Projects List */}
@@ -162,10 +162,10 @@ export default function ProjectsSection({ onScrollToSection }: ProjectsSectionPr
                     <span className="text-[10px] text-cyan-400 font-mono tracking-wider font-bold bg-cyan-500/10 px-2.5 py-1 rounded-md">
                       FEATURED CASE #{idx + 1}
                     </span>
-                    <h3 className="text-2xl font-bold font-display text-white mt-3 flex items-center gap-2">
+                    <h3 className="text-2xl font-bold font-display text-primary mt-3 flex items-center gap-2">
                       {proj.title}
                     </h3>
-                    <p className="text-xs text-gray-400 font-medium font-sans mt-1">{proj.description}</p>
+                    <p className="text-xs text-secondary font-medium font-sans mt-1">{proj.description}</p>
                   </div>
 
                   {/* Tech stack badges */}
@@ -179,10 +179,10 @@ export default function ProjectsSection({ onScrollToSection }: ProjectsSectionPr
 
                   {/* Implementation Checklist */}
                   <div className="space-y-2">
-                    <h4 className="text-xs font-bold font-display text-white uppercase tracking-wider">Key Implementations</h4>
+                    <h4 className="text-xs font-bold font-display text-primary uppercase tracking-wider">Key Implementations</h4>
                     <ul className="space-y-1.5">
                       {proj.features.map((feat, fidx) => (
-                        <li key={fidx} className="flex items-start gap-2 text-xs text-gray-400">
+                        <li key={fidx} className="flex items-start gap-2 text-xs text-secondary">
                           <CheckCircle2 className="h-4.5 w-4.5 text-cyan-400 shrink-0 mt-0.5" />
                           <span>{feat}</span>
                         </li>
@@ -197,7 +197,7 @@ export default function ProjectsSection({ onScrollToSection }: ProjectsSectionPr
                       className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                         isSelectedDemo
                           ? "bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20"
-                          : "bg-white/5 hover:bg-white/10 text-gray-300 border border-white/5"
+                          : "bg-white/5 hover:bg-white/10 text-secondary border border-white/5"
                       }`}
                     >
                       <Play className="h-3.5 w-3.5 fill-current" />
@@ -206,9 +206,9 @@ export default function ProjectsSection({ onScrollToSection }: ProjectsSectionPr
 
                     <button
                       onClick={() => setExpandedArchitecture(isArchitectureExpanded ? null : proj.id)}
-                      className="flex items-center gap-1.5 bg-white/5 hover:bg-white/10 text-gray-300 px-4 py-2 rounded-xl text-xs font-semibold border border-white/5 hover:border-white/10 transition-all cursor-pointer"
+                      className="flex items-center gap-1.5 bg-white/5 hover:bg-white/10 text-secondary px-4 py-2 rounded-xl text-xs font-semibold border border-white/5 hover:border-white/10 transition-all cursor-pointer"
                     >
-                      <Terminal className="h-3.5 w-3.5" />
+                      <Play className="h-3.5 w-3.5" />
                       {isArchitectureExpanded ? "Hide Architecture" : "View Tech Architecture"}
                     </button>
 
@@ -216,7 +216,7 @@ export default function ProjectsSection({ onScrollToSection }: ProjectsSectionPr
                       href={proj.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white px-4 py-2 rounded-xl text-xs font-semibold border border-white/5 hover:border-white/10 transition-all"
+                      className="flex items-center gap-1 bg-white/5 hover:bg-white/10 text-secondary hover:text-white px-4 py-2 rounded-xl text-xs font-semibold border border-white/5 hover:border-white/10 transition-all"
                     >
                       <Github className="h-3.5 w-3.5" />
                       GitHub Repo
@@ -232,10 +232,10 @@ export default function ProjectsSection({ onScrollToSection }: ProjectsSectionPr
                         exit={{ opacity: 0, height: 0 }}
                         className="bg-cyan-500/5 border border-cyan-500/20 rounded-2xl p-4 overflow-hidden mt-4"
                       >
-                        <h4 className="text-xs font-bold font-display text-white uppercase tracking-wider mb-2 flex items-center gap-1">
+                        <h4 className="text-xs font-bold font-display text-primary uppercase tracking-wider mb-2 flex items-center gap-1">
                           <Cpu className="h-4 w-4 text-cyan-400" /> Layered System Architecture
                         </h4>
-                        <p className="text-xs text-gray-300 leading-relaxed font-sans mb-3">
+                        <p className="text-xs text-secondary leading-relaxed font-sans mb-3">
                           {proj.architecture}
                         </p>
                         <button
@@ -258,7 +258,7 @@ export default function ProjectsSection({ onScrollToSection }: ProjectsSectionPr
                       <div className="flex justify-between items-center border-b border-white/10 pb-2">
                         <div className="flex items-center gap-2">
                           <Server className="h-4 w-4 text-cyan-400" />
-                          <span className="text-xs font-bold font-mono text-white">SPRING BOOT CONSOLE</span>
+                          <span className="text-xs font-bold font-mono text-primary">SPRING BOOT CONSOLE</span>
                         </div>
                         <span className="text-[9px] font-mono text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
                           🟢 DB ACTIVE
@@ -267,25 +267,25 @@ export default function ProjectsSection({ onScrollToSection }: ProjectsSectionPr
 
                       {/* Stock Items Counter Controls */}
                       <div className="space-y-2">
-                        <p className="text-[11px] text-gray-400 font-mono">Stock Depletion Control Simulator:</p>
+                        <p className="text-[11px] text-secondary font-mono">Stock Depletion Control Simulator:</p>
                         {inventoryItems.map((item) => (
                           <div key={item.id} className="bg-slate-900 border border-white/5 p-2.5 rounded-xl flex items-center justify-between text-xs font-mono">
                             <div className="min-w-0 flex-1 mr-2">
-                              <span className="text-white font-semibold block truncate">{item.name}</span>
-                              <span className="text-[10px] text-gray-400">Qty: <strong className={item.stock <= item.threshold ? "text-red-400" : "text-cyan-400"}>{item.stock}</strong> (Min: {item.threshold})</span>
+                              <span className="text-primary font-semibold block truncate">{item.name}</span>
+                              <span className="text-[10px] text-secondary">Qty: <strong className={item.stock <= item.threshold ? "text-red-400" : "text-cyan-400"}>{item.stock}</strong> (Min: {item.threshold})</span>
                             </div>
 
                             <div className="flex items-center gap-1">
                               <button
                                 onClick={() => handleAdjustStock(item.id, -1)}
-                                className="p-1 bg-white/5 hover:bg-white/10 text-gray-300 rounded hover:text-white cursor-pointer"
+                                className="p-1 bg-white/5 hover:bg-white/10 text-secondary rounded hover:text-white cursor-pointer"
                                 title="Deplete stock by 1"
                               >
                                 <Minus className="h-3 w-3" />
                               </button>
                               <button
                                 onClick={() => handleAdjustStock(item.id, 1)}
-                                className="p-1 bg-white/5 hover:bg-white/10 text-gray-300 rounded hover:text-white cursor-pointer"
+                                className="p-1 bg-white/5 hover:bg-white/10 text-secondary rounded hover:text-white cursor-pointer"
                                 title="Add stock by 1"
                               >
                                 <Plus className="h-3 w-3" />
@@ -319,7 +319,7 @@ export default function ProjectsSection({ onScrollToSection }: ProjectsSectionPr
                       <div className="flex justify-between items-center border-b border-white/10 pb-2">
                         <div className="flex items-center gap-2">
                           <Sparkles className="h-4 w-4 text-cyan-400" />
-                          <span className="text-xs font-bold font-mono text-white">AI ROADMAP & VOICE TUTOR</span>
+                          <span className="text-xs font-bold font-mono text-primary">AI ROADMAP & VOICE TUTOR</span>
                         </div>
                         <span className="text-[9px] font-mono text-cyan-400 font-bold bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">
                           GEMINI 3.5 API
@@ -328,7 +328,7 @@ export default function ProjectsSection({ onScrollToSection }: ProjectsSectionPr
 
                       {/* Topic Selection Buttons */}
                       <div className="space-y-1.5">
-                        <p className="text-[11px] text-gray-400 font-mono">Select Academic Topic to Synthesize:</p>
+                        <p className="text-[11px] text-secondary font-mono">Select Academic Topic to Synthesize:</p>
                         <div className="flex flex-wrap gap-1.5">
                           {[
                             "Spring Boot Microservices",
@@ -341,7 +341,7 @@ export default function ProjectsSection({ onScrollToSection }: ProjectsSectionPr
                               className={`text-[10px] font-mono px-2.5 py-1 rounded-lg border transition-all cursor-pointer ${
                                 selectedTopic === topic
                                   ? "bg-cyan-500 text-slate-950 font-bold border-cyan-400"
-                                  : "bg-white/5 border-white/10 text-gray-300 hover:bg-white/10"
+                                  : "bg-white/5 border-white/10 text-secondary hover:bg-white/10"
                               }`}
                             >
                               {topic}
@@ -353,13 +353,13 @@ export default function ProjectsSection({ onScrollToSection }: ProjectsSectionPr
                       {/* Synthesized Output */}
                       <div className="bg-slate-950 p-3 rounded-xl border border-white/5 font-mono text-xs text-cyan-300 max-h-[140px] overflow-y-auto space-y-1.5">
                         {isGeneratingRoadmap ? (
-                          <div className="flex items-center gap-2 text-gray-400 py-4 justify-center">
+                          <div className="flex items-center gap-2 text-secondary py-4 justify-center">
                             <RefreshCw className="h-4 w-4 animate-spin text-cyan-400" />
                             <span>Synthesizing learning nodes...</span>
                           </div>
                         ) : (
                           generatedRoadmap.map((step, sidx) => (
-                            <div key={sidx} className="text-gray-200 leading-snug">
+                            <div key={sidx} className="text-secondary leading-snug">
                               {step}
                             </div>
                           ))
@@ -374,7 +374,7 @@ export default function ProjectsSection({ onScrollToSection }: ProjectsSectionPr
                       <div className="flex justify-between items-center border-b border-white/10 pb-2">
                         <div className="flex items-center gap-2">
                           <Zap className="h-4 w-4 text-cyan-400" />
-                          <span className="text-xs font-bold font-mono text-white">WEB3 & TENSORFLOW.JS EDGE</span>
+                          <span className="text-xs font-bold font-mono text-primary">WEB3 & TENSORFLOW.JS EDGE</span>
                         </div>
                         <button
                           onClick={handleSimulateThreat}
@@ -387,15 +387,15 @@ export default function ProjectsSection({ onScrollToSection }: ProjectsSectionPr
 
                       {/* Live Block Cards */}
                       <div className="space-y-2">
-                        <p className="text-[11px] text-gray-400 font-mono">Live Cryptographic Block Ledger Stream:</p>
+                        <p className="text-[11px] text-secondary font-mono">Live Cryptographic Block Ledger Stream:</p>
                         {blocks.map((blk) => (
                           <div key={blk.blockNo} className="bg-slate-900 border border-white/5 p-2.5 rounded-xl flex items-center justify-between font-mono text-xs">
                             <div>
                               <div className="flex items-center gap-2">
-                                <span className="text-white font-bold">Block #{blk.blockNo}</span>
-                                <span className="text-[10px] text-gray-500">{blk.hash}</span>
+                                <span className="text-primary font-bold">Block #{blk.blockNo}</span>
+                                <span className="text-[10px] text-secondary">{blk.hash}</span>
                               </div>
-                              <span className="text-[10px] text-gray-400 block mt-0.5">
+                              <span className="text-[10px] text-secondary block mt-0.5">
                                 Txns: {blk.txCount} | TF Anomaly: <strong className={blk.tfAnomalyScore > 0.5 ? "text-red-400" : "text-emerald-400"}>{blk.tfAnomalyScore}</strong>
                               </span>
                             </div>

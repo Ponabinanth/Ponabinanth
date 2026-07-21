@@ -8,9 +8,9 @@ export default function CertificatesSection() {
         
         {/* Section Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-white">Certificates & Credentials</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-display text-primary">Certificates & Credentials</h2>
           <div className="w-16 h-1 bg-cyan-500 mx-auto mt-3 rounded-full" />
-          <p className="text-gray-400 text-xs mt-2 uppercase tracking-widest">Validated Industry & University Accreditations</p>
+          <p className="text-secondary text-xs mt-2 uppercase tracking-widest">Validated Industry & University Accreditations</p>
         </div>
 
         {/* Credentials Grid */}
@@ -27,14 +27,14 @@ export default function CertificatesSection() {
                     <div className="bg-cyan-500/15 text-cyan-400 p-2.5 rounded-xl group-hover:bg-cyan-500 group-hover:text-slate-950 transition-all duration-300">
                       <Award className="h-5 w-5" />
                     </div>
-                    <span className="text-[10px] text-gray-500 font-mono font-semibold tracking-wider">{cert.date}</span>
+                    <span className="text-[10px] text-secondary font-mono font-semibold tracking-wider">{cert.date}</span>
                   </div>
 
                   <div>
-                    <h3 className="text-sm font-bold font-display text-white group-hover:text-cyan-400 transition-all">
+                    <h3 className="text-sm font-bold font-display text-primary group-hover:text-cyan-400 transition-all">
                       {cert.title}
                     </h3>
-                    <p className="text-xs text-gray-400 font-medium font-sans mt-1">
+                    <p className="text-xs text-secondary font-medium font-sans mt-1">
                       {cert.issuer}
                     </p>
                   </div>
@@ -42,8 +42,8 @@ export default function CertificatesSection() {
 
                 {/* Validation tag */}
                 <div className="mt-6 border-t border-white/5 pt-3 flex items-center justify-between">
-                  <div className="font-mono text-[9px] text-gray-500">
-                    ID: <span className="text-gray-400 font-medium">{cert.credentialId}</span>
+                  <div className="font-mono text-[9px] text-secondary">
+                    ID: <span className="text-secondary font-medium">{cert.credentialId}</span>
                   </div>
                   <span className="flex items-center gap-1 text-[9px] font-semibold text-emerald-400/80 uppercase tracking-widest font-mono">
                     <CheckCircle className="h-3.5 w-3.5 text-emerald-400" />

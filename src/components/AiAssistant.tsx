@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import {
-  MessageSquare, Mic, MicOff, Volume2, VolumeX, Sparkles, Terminal, Code,
+  MessageSquare, Mic, MicOff, Volume2, VolumeX, Sparkles, Code, Cpu,
   Award, Play, Send, ChevronRight, RefreshCw, Upload, Search, CheckCircle2,
   AlertTriangle, ArrowRight, UserCheck, Shield
 } from "lucide-react";
@@ -295,7 +295,7 @@ Looking for entry level software developer role.
             </span>
             <span className="font-mono text-xs text-cyan-400 font-semibold tracking-wider">ASSISTANT ENGINE V2.5</span>
           </div>
-          <h2 className="text-2xl font-bold font-display text-white mt-1 flex items-center gap-2">
+          <h2 className="text-2xl font-bold font-display text-primary mt-1 flex items-center gap-2">
             Abinanth-AI Assistant Core <Sparkles className="h-5 w-5 text-cyan-400 animate-pulse" />
           </h2>
           <p className="text-xs text-gray-400">Ask questions, simulate technical interviews, assess roles, and test live AI logic.</p>
@@ -328,7 +328,7 @@ Looking for entry level software developer role.
       <div className="flex flex-wrap gap-2 mt-4">
         {[
           { id: "chat", label: "Q&A Twin", icon: MessageSquare },
-          { id: "interview", label: "Interview Bot", icon: Terminal },
+          { id: "interview", label: "Interview Bot", icon: MessageSquare },
           { id: "coach", label: "Career Coach", icon: UserCheck },
           { id: "codegen", label: "Code Gen", icon: Code },
           { id: "analyzer", label: "Resume Evaluator", icon: Award },
@@ -433,8 +433,8 @@ Looking for entry level software developer role.
             >
               {!interviewStarted ? (
                 <div className="flex-1 flex flex-col items-center justify-center text-center p-6">
-                  <Terminal className="h-12 w-12 text-cyan-400 mb-3 animate-pulse" />
-                  <h3 className="text-lg font-bold text-white font-display">Technical Mock Interview Simulator</h3>
+                  <MessageSquare className="h-12 w-12 text-blue-500 mb-3 animate-pulse" />
+                  <h3 className="text-lg font-bold text-primary font-display">Technical Mock Interview Simulator</h3>
                   <p className="text-xs text-gray-400 max-w-md mt-1 mb-4">
                     Test yourself or observe the AI act as a Senior Technical Recruiter. The AI will ask Java core, Spring Boot architecture, OOP, JVM memory layout, and algorithms questions one by one and grade your answers!
                   </p>

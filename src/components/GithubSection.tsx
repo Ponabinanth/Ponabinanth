@@ -104,9 +104,9 @@ export default function GithubSection() {
             <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
             REAL-TIME GITHUB TELEMETRY
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-white">Live GitHub Analytics</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-display text-primary">Live GitHub Analytics</h2>
           <div className="w-16 h-1 bg-cyan-500 mx-auto mt-3 rounded-full" />
-          <p className="text-gray-400 text-xs mt-2 uppercase tracking-widest">Dynamic repos, live star counts, and active commit feeds</p>
+          <p className="text-secondary text-xs mt-2 uppercase tracking-widest">Dynamic repos, live star counts, and active commit feeds</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -126,11 +126,11 @@ export default function GithubSection() {
                 />
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between">
-                    <span className="font-bold font-display text-white text-sm truncate">@{githubData.username}</span>
+                    <span className="font-bold font-display text-primary text-sm truncate">@{githubData.username}</span>
                     <button
                       onClick={fetchLiveGithubData}
                       disabled={isLoading}
-                      className="p-1 text-gray-400 hover:text-cyan-400 transition-all cursor-pointer"
+                      className="p-1 text-secondary hover:text-cyan-400 transition-all cursor-pointer"
                       title="Refresh Live GitHub API"
                     >
                       <RefreshCw className={`h-3.5 w-3.5 ${isLoading ? "animate-spin text-cyan-400" : ""}`} />
@@ -150,36 +150,36 @@ export default function GithubSection() {
               {/* Stats Grid */}
               <div className="grid grid-cols-2 gap-3">
                 <div className="bg-white/5 border border-white/5 p-3.5 rounded-2xl">
-                  <span className="text-2xl font-bold font-display text-white">{githubData.publicRepos}</span>
-                  <span className="block text-[10px] text-gray-400 font-mono uppercase tracking-wider mt-0.5">Public Repos</span>
+                  <span className="text-2xl font-bold font-display text-primary">{githubData.publicRepos}</span>
+                  <span className="block text-[10px] text-secondary font-mono uppercase tracking-wider mt-0.5">Public Repos</span>
                 </div>
                 <div className="bg-white/5 border border-white/5 p-3.5 rounded-2xl">
-                  <span className="text-2xl font-bold font-display text-white">{githubData.contributions}</span>
-                  <span className="block text-[10px] text-gray-400 font-mono uppercase tracking-wider mt-0.5">Contributions</span>
+                  <span className="text-2xl font-bold font-display text-primary">{githubData.contributions}</span>
+                  <span className="block text-[10px] text-secondary font-mono uppercase tracking-wider mt-0.5">Contributions</span>
                 </div>
                 <div className="bg-white/5 border border-white/5 p-3.5 rounded-2xl">
-                  <span className="text-2xl font-bold font-display text-white">{githubData.totalStars}</span>
-                  <span className="block text-[10px] text-gray-400 font-mono uppercase tracking-wider mt-0.5">Total Stars</span>
+                  <span className="text-2xl font-bold font-display text-primary">{githubData.totalStars}</span>
+                  <span className="block text-[10px] text-secondary font-mono uppercase tracking-wider mt-0.5">Total Stars</span>
                 </div>
                 <div className="bg-white/5 border border-white/5 p-3.5 rounded-2xl">
-                  <span className="text-2xl font-bold font-display text-white">{githubData.followers}</span>
-                  <span className="block text-[10px] text-gray-400 font-mono uppercase tracking-wider mt-0.5">Followers</span>
+                  <span className="text-2xl font-bold font-display text-primary">{githubData.followers}</span>
+                  <span className="block text-[10px] text-secondary font-mono uppercase tracking-wider mt-0.5">Followers</span>
                 </div>
               </div>
             </div>
 
             {/* Language Breakdown */}
             <div className="border-t border-white/5 pt-5 space-y-3">
-              <h4 className="text-xs font-bold font-display text-white uppercase tracking-wider flex items-center justify-between">
+              <h4 className="text-xs font-bold font-display text-primary uppercase tracking-wider flex items-center justify-between">
                 <span>Primary Languages</span>
                 <span className="text-[10px] text-cyan-400 font-mono">Synced</span>
               </h4>
               <div className="space-y-2">
                 {githubData.languages.map((lang, idx) => (
                   <div key={idx} className="space-y-1">
-                    <div className="flex justify-between items-center text-[11px] font-mono text-gray-400">
+                    <div className="flex justify-between items-center text-[11px] font-mono text-secondary">
                       <span>{lang.name}</span>
-                      <span className="text-white font-semibold">{lang.percentage}%</span>
+                      <span className="text-primary font-semibold">{lang.percentage}%</span>
                     </div>
                     <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
                       <div
@@ -199,7 +199,7 @@ export default function GithubSection() {
             {/* Contribution Board Card */}
             <div className="glass-panel p-6 rounded-3xl border border-white/5">
               <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xs font-bold font-display text-white uppercase tracking-wider flex items-center gap-1.5">
+                <h3 className="text-xs font-bold font-display text-primary uppercase tracking-wider flex items-center gap-1.5">
                   <Calendar className="h-4 w-4 text-cyan-400" /> Real-Time Commit Heatmap (Last 180 Days)
                 </h3>
                 <span className="text-[10px] text-emerald-400 font-mono flex items-center gap-1">
@@ -212,7 +212,7 @@ export default function GithubSection() {
                 {renderContributionGrid()}
               </div>
 
-              <div className="flex justify-between items-center text-[10px] font-mono text-gray-500 mt-3 px-1">
+              <div className="flex justify-between items-center text-[10px] font-mono text-secondary mt-3 px-1">
                 <span>Account Created: June 2025</span>
                 <div className="flex gap-1.5 items-center">
                   <span>Less</span>
@@ -227,7 +227,7 @@ export default function GithubSection() {
 
             {/* Top Repos list */}
             <div className="space-y-3">
-              <h3 className="text-xs font-bold font-display text-white uppercase tracking-wider flex items-center gap-1.5">
+              <h3 className="text-xs font-bold font-display text-primary uppercase tracking-wider flex items-center gap-1.5">
                 <Code2 className="h-4 w-4 text-cyan-400" /> Featured Active Repositories
               </h3>
 
@@ -242,14 +242,14 @@ export default function GithubSection() {
                         className="text-xs font-bold font-mono text-white tracking-tight break-all hover:text-cyan-400 transition-all flex items-center justify-between"
                       >
                         <span>{repo.name}</span>
-                        <ExternalLink className="h-3 w-3 text-gray-500 shrink-0 ml-1" />
+                        <ExternalLink className="h-3 w-3 text-secondary shrink-0 ml-1" />
                       </a>
-                      <p className="text-[11px] text-gray-400 mt-2 leading-relaxed line-clamp-3">
+                      <p className="text-[11px] text-secondary mt-2 leading-relaxed line-clamp-3">
                         {repo.desc}
                       </p>
                     </div>
 
-                    <div className="flex justify-between items-center mt-4 border-t border-white/5 pt-2.5 text-[10px] font-mono text-gray-500">
+                    <div className="flex justify-between items-center mt-4 border-t border-white/5 pt-2.5 text-[10px] font-mono text-secondary">
                       <span className="flex items-center gap-1">
                         <span className="w-2 h-2 rounded-full bg-cyan-400" /> {repo.lang}
                       </span>

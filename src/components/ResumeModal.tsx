@@ -27,7 +27,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           <div className="bg-[#0f172a] px-6 py-4 border-b border-white/10 flex justify-between items-center shrink-0">
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-cyan-400 animate-pulse" />
-              <h3 className="text-sm font-bold font-display text-white uppercase tracking-wider">
+              <h3 className="text-sm font-bold font-display text-primary uppercase tracking-wider">
                 CURRICULUM VITAE PREVIEW
               </h3>
             </div>
@@ -55,7 +55,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             {/* 1. Header Banner */}
             <div className="border-b border-white/10 pb-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
               <div>
-                <h1 className="text-3xl font-black font-display text-white tracking-tight">{portfolioData.name}</h1>
+                <h1 className="text-3xl font-black font-display text-primary tracking-tight">{portfolioData.name}</h1>
                 <p className="text-sm font-mono text-cyan-400 font-semibold mt-1">{portfolioData.title}</p>
                 <p className="text-xs text-gray-400 mt-1">{portfolioData.location}</p>
               </div>
@@ -98,7 +98,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                 {portfolioData.skills.map((cat, idx) => (
                   <div key={idx} className="bg-white/5 border border-white/5 p-3 rounded-2xl">
-                    <h3 className="text-[11px] font-bold text-white uppercase font-display mb-1.5">{cat.category}</h3>
+                    <h3 className="text-[11px] font-bold text-primary uppercase font-display mb-1.5">{cat.category}</h3>
                     <div className="flex flex-wrap gap-1">
                       {cat.items.map((item, i) => (
                         <span key={i} className="text-[10px] font-mono bg-white/5 text-cyan-300 px-1.5 py-0.5 rounded">
@@ -121,7 +121,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 {portfolioData.projects.map((proj, idx) => (
                   <div key={idx} className="bg-white/5 border border-white/5 p-4 rounded-2xl space-y-2">
                     <div className="flex justify-between items-center">
-                      <h3 className="text-sm font-bold text-white font-display">{proj.title}</h3>
+                      <h3 className="text-sm font-bold text-primary font-display">{proj.title}</h3>
                       <span className="text-[10px] font-mono text-cyan-400 font-bold bg-cyan-500/10 px-2 py-0.5 rounded">
                         {proj.techStack.slice(0, 3).join(", ")}
                       </span>
@@ -145,7 +145,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 </h2>
                 {portfolioData.education.map((edu, idx) => (
                   <div key={idx} className="bg-white/5 border border-white/5 p-3.5 rounded-2xl">
-                    <p className="text-xs font-bold text-white">{edu.degree}</p>
+                    <p className="text-xs font-bold text-primary">{edu.degree}</p>
                     <p className="text-[11px] text-gray-400">{edu.institution}</p>
                     <div className="flex justify-between text-[10px] font-mono text-cyan-300 mt-1">
                       <span>{edu.duration}</span>
@@ -162,7 +162,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 <div className="space-y-2">
                   {portfolioData.certificates.map((cert, idx) => (
                     <div key={idx} className="bg-white/5 border border-white/5 p-3.5 rounded-2xl">
-                      <p className="text-xs font-bold text-white">{cert.title}</p>
+                      <p className="text-xs font-bold text-primary">{cert.title}</p>
                       <p className="text-[11px] text-gray-400">{cert.issuer} ({cert.date})</p>
                       <p className="text-[10px] font-mono text-gray-500 mt-0.5">ID: {cert.credentialId}</p>
                     </div>

@@ -232,7 +232,7 @@ export const portfolioData: PortfolioData = {
       badge: "3-Star Rank",
       rank: "Rating 1680",
       color: "from-emerald-500 to-green-600",
-      iconName: "Terminal"
+      iconName: "Code"
     },
     {
       platform: "GeeksforGeeks",

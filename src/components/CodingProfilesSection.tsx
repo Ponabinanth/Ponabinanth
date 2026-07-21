@@ -1,12 +1,12 @@
 import { portfolioData } from "../data.js";
-import { Code, Terminal, Cpu, Award, Zap, ChevronRight } from "lucide-react";
+import { Code, Code2, Cpu, Award, Zap, ChevronRight } from "lucide-react";
 
 export default function CodingProfilesSection() {
   // Map index to icon name
   const getIconComponent = (iconName: string) => {
     switch (iconName) {
       case "Code": return Code;
-      case "Terminal": return Terminal;
+      case "Terminal": return Code2;
       case "Cpu": return Cpu;
       default: return Award;
     }
@@ -18,9 +18,9 @@ export default function CodingProfilesSection() {
         
         {/* Section Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-white">Algorithms & DSA Profiles</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-display text-primary">Algorithms & DSA Profiles</h2>
           <div className="w-16 h-1 bg-cyan-500 mx-auto mt-3 rounded-full" />
-          <p className="text-gray-400 text-xs mt-2 uppercase tracking-widest">Competitive coding platforms and diagnostic stats</p>
+          <p className="text-secondary text-xs mt-2 uppercase tracking-widest">Competitive coding platforms and diagnostic stats</p>
         </div>
 
         {/* Profiles Grid */}
@@ -42,8 +42,8 @@ export default function CodingProfilesSection() {
                   </div>
 
                   <div>
-                    <h3 className="text-sm font-bold font-mono text-gray-400 tracking-wider uppercase">{profile.platform}</h3>
-                    <div className="text-xl font-bold font-display text-white mt-1.5 flex items-center gap-1">
+                    <h3 className="text-sm font-bold font-mono text-secondary tracking-wider uppercase">{profile.platform}</h3>
+                    <div className="text-xl font-bold font-display text-primary mt-1.5 flex items-center gap-1">
                       <Zap className="h-4.5 w-4.5 text-cyan-400" /> {profile.solved}
                     </div>
                   </div>
@@ -52,11 +52,11 @@ export default function CodingProfilesSection() {
                 {/* Badges/Rankings panel */}
                 <div className="mt-6 border-t border-white/5 pt-3 space-y-1 text-xs">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-500">Tier Badge:</span>
-                    <span className="font-semibold text-gray-300">{profile.badge}</span>
+                    <span className="text-secondary">Tier Badge:</span>
+                    <span className="font-semibold text-secondary">{profile.badge}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-500">Ranking Stat:</span>
+                    <span className="text-secondary">Ranking Stat:</span>
                     <span className="font-semibold text-cyan-400 font-mono">{profile.rank}</span>
                   </div>
                 </div>

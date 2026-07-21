@@ -19,14 +19,14 @@ export default function SkillsSection() {
         
         {/* Section Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-white">Skills Portfolio</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-display text-primary">Skills Portfolio</h2>
           <div className="w-16 h-1 bg-cyan-500 mx-auto mt-3 rounded-full" />
-          <p className="text-gray-400 text-xs mt-2 uppercase tracking-widest">Enterprise backend tools and neural networks</p>
+          <p className="text-secondary text-xs mt-2 uppercase tracking-widest">Enterprise backend tools and neural networks</p>
         </div>
 
         {/* 1. ANIMATED CIRCULAR PROGRESS BARS */}
         <div className="mb-16">
-          <h3 className="text-lg font-bold font-display text-white text-center mb-8">Core Competency Levels</h3>
+          <h3 className="text-lg font-bold font-display text-primary text-center mb-8">Core Competency Levels</h3>
           
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
             {portfolioData.skillProgress.map((skill, i) => {
@@ -61,12 +61,12 @@ export default function SkillsSection() {
                       />
                     </svg>
                     {/* Inner percentage text */}
-                    <div className="absolute font-mono text-base font-bold text-white">
+                    <div className="absolute font-mono text-base font-bold text-primary">
                       {skill.percentage}%
                     </div>
                   </div>
 
-                  <span className="text-xs font-bold font-display text-gray-300 text-center mt-3">{skill.name}</span>
+                  <span className="text-xs font-bold font-display text-secondary text-center mt-3">{skill.name}</span>
                 </div>
               );
             })}
@@ -85,12 +85,12 @@ export default function SkillsSection() {
                   <div className="bg-cyan-500/10 text-cyan-400 p-2 rounded-xl group-hover:scale-110 transition-all">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h4 className="text-md font-bold font-display text-white">{cat.category}</h4>
+                  <h4 className="text-md font-bold font-display text-primary">{cat.category}</h4>
                 </div>
 
                 <ul className="space-y-2.5">
                   {cat.items.map((item, itemIdx) => (
-                    <li key={itemIdx} className="flex items-center gap-2 text-xs text-gray-400 font-mono">
+                    <li key={itemIdx} className="flex items-center gap-2 text-xs text-secondary font-mono">
                       <CheckCircle2 className="h-4 w-4 text-cyan-400/80 shrink-0" />
                       <span>{item}</span>
                     </li>

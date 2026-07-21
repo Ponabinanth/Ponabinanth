@@ -8,7 +8,7 @@ import { GoogleGenAI } from "@google/genai";
 import { portfolioData } from "./src/data.js"; // Importing data to feed the model
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3010;
 
 app.use(express.json());
 
@@ -368,7 +368,7 @@ async function startServer() {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server successfully booted and listening on http://0.0.0.0:${PORT}`);
+    console.log(`Server successfully booted and listening on http://localhost:${PORT}`);
   });
 }
 

@@ -9,16 +9,16 @@ export default function ExperienceEducationSection() {
         
         {/* Section Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-white">Experience & Education</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-display text-primary">Experience & Education</h2>
           <div className="w-16 h-1 bg-cyan-500 mx-auto mt-3 rounded-full" />
-          <p className="text-gray-400 text-xs mt-2 uppercase tracking-widest">My Industrial Internships & Academic Foundation</p>
+          <p className="text-secondary text-xs mt-2 uppercase tracking-widest">My Industrial Internships & Academic Foundation</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           
           {/* Internship Experience */}
           <div className="space-y-8">
-            <h3 className="text-xl font-bold font-display text-white flex items-center gap-3">
+            <h3 className="text-xl font-bold font-display text-primary flex items-center gap-3">
               <div className="p-2 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
                 <Briefcase className="h-5 w-5" />
               </div>
@@ -33,20 +33,20 @@ export default function ExperienceEducationSection() {
                 >
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
                     <div>
-                      <h4 className="text-base font-bold text-white font-display group-hover:text-cyan-400 transition-all">
+                      <h4 className="text-base font-bold text-primary font-display group-hover:text-cyan-400 transition-all">
                         {intern.role}
                       </h4>
                       <p className="text-xs font-mono text-cyan-400/80 font-semibold mt-0.5">
                         {intern.company}
                       </p>
                     </div>
-                    <span className="inline-flex items-center gap-1.5 self-start md:self-center font-mono text-[10px] text-gray-400 bg-white/5 border border-white/5 px-2.5 py-1 rounded-lg">
+                    <span className="inline-flex items-center gap-1.5 self-start md:self-center font-mono text-[10px] text-secondary bg-white/5 border border-white/5 px-2.5 py-1 rounded-lg">
                       <Calendar className="h-3 w-3 text-cyan-400" />
                       {intern.duration}
                     </span>
                   </div>
 
-                  <ul className="space-y-2.5 text-xs text-gray-400 font-sans list-none">
+                  <ul className="space-y-2.5 text-xs text-secondary font-sans list-none">
                     {intern.bullets.map((bullet, bIdx) => (
                       <li key={bIdx} className="flex gap-2.5 items-start">
                         <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-1.5 shrink-0" />
@@ -61,7 +61,7 @@ export default function ExperienceEducationSection() {
 
           {/* Education */}
           <div className="space-y-8">
-            <h3 className="text-xl font-bold font-display text-white flex items-center gap-3">
+            <h3 className="text-xl font-bold font-display text-primary flex items-center gap-3">
               <div className="p-2 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
                 <GraduationCap className="h-5 w-5" />
               </div>
@@ -76,14 +76,14 @@ export default function ExperienceEducationSection() {
                 >
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
                     <div>
-                      <h4 className="text-base font-bold text-white font-display group-hover:text-cyan-400 transition-all">
+                      <h4 className="text-base font-bold text-primary font-display group-hover:text-cyan-400 transition-all">
                         {edu.degree}
                       </h4>
                       <p className="text-xs font-mono text-cyan-400/80 font-semibold mt-0.5">
                         {edu.institution}
                       </p>
                     </div>
-                    <span className="inline-flex items-center gap-1.5 self-start md:self-center font-mono text-[10px] text-gray-400 bg-white/5 border border-white/5 px-2.5 py-1 rounded-lg">
+                    <span className="inline-flex items-center gap-1.5 self-start md:self-center font-mono text-[10px] text-secondary bg-white/5 border border-white/5 px-2.5 py-1 rounded-lg">
                       <Calendar className="h-3 w-3 text-cyan-400" />
                       {edu.duration}
                     </span>
