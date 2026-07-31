@@ -1,3 +1,13 @@
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/Ponabinanth/Ponabinanth/main/images/banner.png" width="100%" alt="Banner"/>
+
+</div>
+
+# 👋 Hi, I'm Ponabinanth S
+
+Full-Stack Developer | Java | Spring Boot | React | AI Enthusiast
+
 ### 🚀 Building Modern Software • AI Solutions • Backend Systems
 
 [![Portfolio](https://img.shields.io/badge/🌐_Portfolio-000000?style=for-the-badge)](https://ponabinanth-iczw.vercel.app/)
