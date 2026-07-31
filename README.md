@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src=""C:\Users\winadmin\Downloads\banner.img.png"" width="100%" alt="Ponabinanth Banner"/>
+<img src=""https://chatgpt.com/s/m_6a6cd0383ac48191a481f3d41af8b302"" width="100%" alt="Ponabinanth Banner"/>
 
 </div>
 
