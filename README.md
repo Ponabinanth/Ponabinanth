@@ -25,7 +25,7 @@ Name      : Ponabinanth S
 Role      : Full-Stack Developer
 Degree    : B.E Computer Science & Engineering
 College   : V.S.B Engineering College
-CGPA      : 8.2
+CGPA      : 8.0
 Location  : Karur, Tamil Nadu, India
 Graduation: 2027
 Focus     : AI • Full Stack • Cloud • Backend
@@ -114,7 +114,7 @@ Focus     : AI • Full Stack • Cloud • Backend
 
 # 🏆 Academic Highlights
 
-- 🎯 CGPA : **8.2**
+- 🎯 CGPA : **8.0**
 - 🥇 Java Full Stack Developer
 - 🥇 AI Application Developer
 - 🥇 Database Programming
