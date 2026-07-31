@@ -60,54 +60,54 @@ I'm a **Full-Stack Developer** passionate about building practical applications 
 <tr>
 <td width="50%">
 
-### 🎓 [GradePilot AI](https://github.com/Ponabinanth)
-AI-powered academic management system that analyses student performance, generates personalised academic insights, and automatically delivers approved reports to parents.
+### 🎓 [EduReach — AI Learning Platform](https://github.com/Ponabinanth/Edu-Reach---learning-platform)
+A large-scale AI-powered learning & career-development platform built with a modular architecture, integrating the Gemini API for AI-driven features like tutoring and insights.
 
-`Java` `Spring Boot` `React` `Gemini AI` `MySQL`
-
-</td>
-<td width="50%">
-
-### 💼 [GetYourFutureJob](https://github.com/Ponabinanth)
-AI-powered Resume Analyzer and ATS Optimization platform that analyses resumes, compares them with job descriptions, identifies missing keywords, and provides improvement suggestions.
-
-`React` `Spring Boot` `AI/NLP` `REST API`
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### 🔎 [ReClaimX](https://github.com/Ponabinanth)
-Smart campus lost-and-found platform that matches lost and found items using intelligent keyword analysis and provides real-time notifications.
-
-`Spring Boot` `React` `MongoDB` `REST API`
+`TypeScript` `Vite` `Gemini API` `REST API`
 
 </td>
 <td width="50%">
 
-### 🎓 [EduNexus](https://github.com/Ponabinanth)
-Academic management platform designed to simplify student records, attendance, courses, performance, fees, and institutional management.
+### ✈️ [Simple Airline Reservation System](https://github.com/Ponabinanth/Simple-Airline-Reservation-System)
+A flight booking and reservation system with a clean front-end interface backed by a lightweight Python server for handling bookings.
 
-`Java` `Spring Boot` `MySQL` `JWT`
+`JavaScript` `HTML` `CSS` `Python`
 
 </td>
 </tr>
 <tr>
 <td width="50%">
 
-### 🏆 [Unified Scholarship Portal](https://github.com/Ponabinanth)
-A smart scholarship management platform that connects students with suitable opportunities through profile-based eligibility matching, application tracking, and centralized scholarship administration.
+### 📦 [Inventory Management System](https://github.com/Ponabinanth/Inventory-Management-System)
+A web-based system for tracking stock levels, managing items, and streamlining day-to-day inventory operations.
 
-`React` `Spring Boot` `MySQL`
+`JavaScript` `HTML` `CSS`
 
 </td>
 <td width="50%">
 
-### 💰 [Expense Tracker](https://github.com/Ponabinanth)
-A modern finance management application that enables users to record transactions, monitor spending patterns, analyze financial activity, and maintain better budgeting habits through interactive insights.
+### 🛡️ [DDoS-Cloud](https://github.com/Ponabinanth/DDoS-cloud)
+A cloud-security project (built for Smart India Hackathon) focused on detecting and mitigating DDoS attacks in cloud environments.
 
-`React` `Tailwind CSS` `Vite` `REST API`
+`JavaScript` `Cloud Security` `SIH 2025`
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### 🌾 [Farm Link — Empowering Farmers](https://github.com/Ponabinanth/Farm-Link---Empowering-Farmers-)
+A platform built to connect and empower farmers, bridging the gap between agricultural producers and the resources/markets they need.
+
+`JavaScript` `HTML` `CSS`
+
+</td>
+<td width="50%">
+
+### ⛓️ [BCS — Blockchain Project](https://github.com/Ponabinanth/BCS)
+A blockchain-secured system template exploring decentralized, tamper-proof record management.
+
+`Blockchain` `HTML` `Smart Contracts`
 
 </td>
 </tr>
@@ -115,7 +115,7 @@ A modern finance management application that enables users to record transaction
 
 </div>
 
-> 📌 Replace each project link above with the actual repo URL, e.g. `https://github.com/Ponabinanth/gradepilot-ai`
+> 📌 These are pulled directly from your pinned repositories. Add a short description to each repo's **About** section on GitHub (via the ⚙️ gear icon) so the previews look even better, and feel free to reorder/re-pin your top 6 anytime.
 
 ---
 
