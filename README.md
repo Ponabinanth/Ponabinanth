@@ -1,9 +1,3 @@
-<div align="center">
-
-<img src=""https://chatgpt.com/s/m_6a6cd0383ac48191a481f3d41af8b302"" width="100%" alt="Ponabinanth Banner"/>
-
-</div>
-
 ### 🚀 Building Modern Software • AI Solutions • Backend Systems
 
 [![Portfolio](https://img.shields.io/badge/🌐_Portfolio-000000?style=for-the-badge)](https://ponabinanth-iczw.vercel.app/)
