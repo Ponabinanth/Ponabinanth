@@ -11,7 +11,7 @@ import EducationSection from "./sections/EducationSection";
 import SkillsSection from "./sections/SkillsSection";
 import ProjectsSection from "./sections/ProjectsSection";
 import CertificatesSection from "./sections/CertificatesSection";
-import GithubSection from "./sections/GithubSection";
+
 import ContactSection from "./sections/ContactSection";
 import AiAssistant from "./ui/AiAssistant";
 import { useScroll } from "./hooks/useScroll";
@@ -49,7 +49,7 @@ function AppContent() {
       <SkillsSection />
       <ProjectsSection onScrollToSection={scrollToSection} />
       <CertificatesSection />
-      <GithubSection />
+
       <ContactSection />
     </Layout>
   );

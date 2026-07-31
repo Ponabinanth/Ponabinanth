@@ -20,7 +20,7 @@ export function VoiceProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  const introSpeechScript = `Welcome to my portfolio! I am Ponabinanth S, a Computer Science Engineering student and Java Full Stack Developer specializing in Spring Boot, AI engineering, and decentralized blockchain systems. I build high-performance microservices, RAG-powered intelligent tutors, and edge TensorFlow security applications. Feel free to explore my case studies, test live sandboxes, or chat with my AI twin. Thank you for visiting!`;
+  const introSpeechScript = `Welcome to my portfolio! I am Pon Abinanth, a Computer Science Engineering student and Java Full Stack Developer specializing in Spring Boot, AI engineering, and decentralized blockchain systems. I build high-performance microservices, RAG-powered intelligent tutors, and edge TensorFlow security applications. Feel free to explore my case studies, test live sandboxes, or chat with my AI twin. Thank you for visiting!`;
 
   const playVoiceIntro = () => {
     if (!synthRef.current) return;
