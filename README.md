@@ -1,13 +1,18 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&duration=3000&pause=1000&color=00F7FF&center=true&vCenter=true&width=600&lines=Hi+%F0%9F%91%8B%2C+I'm+Abinanth;Full-Stack+Developer;Java+%7C+Spring+Boot+%7C+React;AI+%26+GenAI+Enthusiast" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&duration=3000&pause=1000&color=00F7FF&center=true&vCenter=true&width=600&lines=Hi+%F0%9F%91%8B%2C+I'm+PONABINANTH+S;Full-Stack+Developer;Java+%7C+Spring+Boot+%7C+React;AI+%26+GenAI+Enthusiast" alt="Typing SVG" />
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F7FF,100:7B2FF7&height=200&section=header&text=Abinanth&fontSize=70&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Full-Stack%20Developer%20%7C%20AI%20Explorer%20%7C%20Builder&descAlignY=55&descSize=18" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F7FF,100:7B2FF7&height=200&section=header&text=PONABINANTH%20S&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Full-Stack%20Developer%20%7C%20AI%20Explorer%20%7C%20Builder&descAlignY=55&descSize=18" width="100%"/>
 
 <br/>
 
+### 🌐 [**View My Live Portfolio →**](https://ponabinanth-iczw.vercel.app/)
+
+<br/>
+
+[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-000000?style=for-the-badge&logoColor=white)](https://ponabinanth-iczw.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ponabinanths/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ponabinanth)
 [![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/u/Abinanth1810/)
@@ -15,6 +20,12 @@
 
 ![Profile Views](https://komarev.com/ghpvc/?username=Ponabinanth&color=00F7FF&style=for-the-badge&label=PROFILE+VIEWS)
 
+</div>
+
+<br/>
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/main/images/blue-lines.gif" width="100%">
 </div>
 
 ---
@@ -29,6 +40,18 @@ I'm a **Full-Stack Developer** passionate about building practical applications 
 🚀 Love building real-world projects
 🧠 Always learning and improving
 ```
+
+---
+
+## 🖥️ Portfolio Preview
+
+<div align="center">
+
+[![Portfolio Preview](https://api.microlink.io/?url=https://ponabinanth-iczw.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&colorScheme=dark&viewport.width=1400&viewport.height=800)](https://ponabinanth-iczw.vercel.app/)
+
+### 👆 [**Click here to explore the full live portfolio**](https://ponabinanth-iczw.vercel.app/)
+
+</div>
 
 ---
 
@@ -161,6 +184,7 @@ A blockchain-secured system template exploring decentralized, tamper-proof recor
 
 <div align="center">
 
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit_Site-000000?style=flat-square&logoColor=white)](https://ponabinanth-iczw.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-ponabinanths-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ponabinanths/)
 [![LeetCode](https://img.shields.io/badge/LeetCode-Abinanth1810-FFA116?style=flat-square&logo=leetcode&logoColor=black)](https://leetcode.com/u/Abinanth1810/)
 [![Gmail](https://img.shields.io/badge/Email-abinanth574%40gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:abinanth574@gmail.com)
