@@ -4,8 +4,6 @@
 
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F7FF,100:7B2FF7&height=220&section=header&text=PONABINANTH%20S&fontSize=58&fontColor=ffffff&animation=fadeIn&desc=Full-Stack%20Developer%20|%20AI%20Explorer%20|%20Problem%20Solver&descAlignY=58" width="100%"/>
-
 ### 🚀 Building Modern Software • AI Solutions • Backend Systems
 
 [![Portfolio](https://img.shields.io/badge/🌐_Portfolio-000000?style=for-the-badge)](https://ponabinanth-iczw.vercel.app/)
