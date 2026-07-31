@@ -1,6 +1,8 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&duration=3000&pause=1000&color=00F7FF&center=true&vCenter=true&width=900&lines=Hi+👋,+I'm+PONABINANTH+S;Full-Stack+Developer;Java+|+Spring+Boot+|+React;AI+%26+GenAI+Enthusiast;Building+Scalable+Software+Solutions" />
+<img src="https://raw.githubusercontent.com/Ponabinanth/Ponabinanth/main/images/banner.png" width="100%" alt="Ponabinanth Banner"/>
+
+</div>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F7FF,100:7B2FF7&height=220&section=header&text=PONABINANTH%20S&fontSize=58&fontColor=ffffff&animation=fadeIn&desc=Full-Stack%20Developer%20|%20AI%20Explorer%20|%20Problem%20Solver&descAlignY=58" width="100%"/>
 
