@@ -109,10 +109,6 @@ Role: Full Stack Web Development Intern &nbsp;|&nbsp; Duration: 2025
 |---|---|
 | 🎓 Current CGPA | 8.0 / 10 |
 | 📘 Key Coursework | Data Structures & Algorithms, REST API Design, Blockchain, Applied AI, Cybersecurity |
-| 🧪 Final Year Project | Smart Classroom Health & Energy Manager *(planned focus area)* |
-| 🏅 Academic Highlights | ✏️`[Rank, scholarship, or notable achievement]` |
-
----
 
 ## 🛠️ Skills
 
@@ -234,20 +230,7 @@ A system that hashes and stores documents on a blockchain to prevent tampering, 
 
 ---
 
-## 💬 Testimonials
 
-> ✏️ *"[A short quote from a mentor, professor, or teammate about working with you]"*
-> — ✏️`[Name, Role]`
-
-> ✏️ *"[Another testimonial goes here]"*
-> — ✏️`[Name, Role]`
-
-> ✏️ *"[A third testimonial can go here]"*
-> — ✏️`[Name, Role]`
-
-> ✏️ *Send me a line or two from anyone who's worked with you and I'll add it here as a quote card.*
-
----
 
 ## 🔬 Research & Domain Interests
 
@@ -255,14 +238,6 @@ A system that hashes and stores documents on a blockchain to prevent tampering, 
 
 ---
 
-## ✍️ Blog & Writing
-
-- ✏️`[Article/Post title]` — [Read →](#)
-- ✏️`[Article/Post title]` — [Read →](#)
-
-> ✏️ *If you write on Medium, Dev.to, or Hashnode, share the links and I'll list your latest posts here — or wire up an auto-updating feed.*
-
----
 
 ## 🎯 Goals for This Year
 
@@ -282,7 +257,7 @@ A system that hashes and stores documents on a blockchain to prevent tampering, 
 
 ## 🕹️ Interests Outside Code
 
-`✏️ Add a hobby` · `✏️ Add a hobby` · `✏️ Add a hobby` · `✏️ Add a hobby`
+`✏️ Blockchain` · `✏️ AI ` · `✏️ Cricket` · `✏️ Add a hobby`
 
 > ✏️ *A couple of personal interests (sports, music, gaming, reading etc.) make the profile feel more human — send a few and I'll drop them in as tags above.*
 
