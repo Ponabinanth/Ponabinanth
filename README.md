@@ -1,381 +1,363 @@
 <div align="center">
 
-# ***PONABINANTH S***
+⚡ PONABINANTH S
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=3000&pause=1000&color=00F7FF&center=true&vCenter=true&width=650&lines=Full-Stack+Developer;Java+%7C+Spring+Boot+%7C+React;AI+%26+GenAI+Enthusiast" alt="Typing SVG" />
+Full-Stack Developer · Java · Spring Boot · React · AI
 
-<img src="https://capsule-render.vercel.app/api?type=soft&color=0:0D1117,50:1a0a2e,100:0D1117&height=8&section=header" width="100%"/>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=2800&pause=900&color=00F7FF&center=true&vCenter=true&width=800&lines=Full-Stack+Developer;Java+%7C+Spring+Boot+%7C+React;AI+%26+GenAI+Explorer;Building+Real-World+Solutions" alt="Typing"/>
 
-### 🌐 [**View My Live Portfolio →**](https://ponabinanth-iczw.vercel.app/)
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F7FF,100:7B2FF7&height=170&section=header&text=PONABINANTH%20S&fontSize=52&fontColor=ffffff&animation=fadeIn&desc=Build%20%7C%20Learn%20%7C%20Innovate&descAlignY=65" width="100%"/>
 
-[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-0D1117?style=for-the-badge&logoColor=FFD700&color=0D1117)](https://ponabinanth-iczw.vercel.app/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ponabinanths/)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ponabinanth)
-[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/u/Abinanth1810/)
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:abinanth574@gmail.com)
 
-![Profile Views](https://komarev.com/ghpvc/?username=Ponabinanth&color=FFD700&style=for-the-badge&label=PROFILE+VIEWS)
+
+
 
 </div>
 
----
+👋 About Me
 
-## 👨‍💻 About Me
+I’m PONABINANTH S, a Computer Science Engineering student and Full-Stack Developer focused on building practical, modern and intelligent software.
 
-Computer Science Engineering undergraduate and full-stack developer who enjoys turning ideas into working, real-world products — from designing APIs and databases to building polished, responsive front-ends. I'm especially drawn to projects that blend **web development with AI**, and I like picking up a problem, breaking it down, and shipping something people can actually use.
+I work across Java, Spring Boot, React, REST APIs, databases and AI-powered applications. I enjoy turning ideas into useful products with clean architecture, responsive interfaces and automation.
 
-<table>
-<tr>
-<td width="50%" valign="top">
+My goal: Build technology that is useful, scalable and easy to experience.
 
-**📍 Location:** ✏️`[City, State]`
-**🎓 Degree:** ✏️`[e.g. B.E. Computer Science Engineering]`
-**🏫 Institution:** ✏️`[College name]`
-**📅 Graduation Year:** ✏️`[Year]`
+🧭 Professional Snapshot
 
-</td>
-<td width="50%" valign="top">
 
-**💼 Open to:** Internships · Full-time roles · Collaboration
-**🧭 Focus:** Full-Stack Development · AI/GenAI Integration
-**🗣️ Exploring:** Generative AI, Cloud & IoT systems
-**⏳ Status:** Actively building & always learning
 
-</td>
-</tr>
-</table>
 
-**Core Strengths:** 🧱 Full-Stack Engineering · 🤖 AI Integration · 🗄️ Database Design · 🔐 Secure APIs · 🚀 Rapid Prototyping
+
+👨‍💻 Role
+
+Full-Stack Developer
+
+🎓 Degree
+
+B.E. Computer Science & Engineering
+
+🏫 College
+
+V.S.B Engineering College
+
+📅 Graduation
+
+2027
+
+📈 CGPA
+
+8.2
+
+📍 Location
+
+Tamil Nadu, India
+
+🎯 Focus
+
+Full Stack · AI · Backend · Cloud
+
+💬 Human Languages
+
+Tamil · English
+
+💪 Core Strengths
+
+Backend Engineering · REST API Development · Database Design · AI IntegrationFrontend Development · Problem Solving · Clean Code · Team CollaborationRapid Learning · Project Development · Debugging · Technical Communication
+
+🎓 Educational Timeline
+
+2021 ──► SSLC
+         Shri Ganga Matriculation School
+         90%
+
+2023 ──► Higher Secondary
+         RKR Grks Matric Hr Sec School
+         71.3%
+
+2024 ──► BE Computer Science & Engineering
+         V.S.B Engineering College
+
+2027 ──► Expected Graduation
+         CGPA: 8.2
+
+💼 Industrial Experience
+
+🏢 Infosys — Java / Full-Stack Development
+
+Focus: Java · Spring Boot · REST APIs · JDBC · SQL · Testing
+
+Worked with Java-based application development.
+
+Explored backend APIs and database integration.
+
+Worked with testing and software development practices.
+
+Built practical application experience through the Infosys ecosystem.
+
+🏢 SquashApps — Full-Stack Web Development
+
+Focus: Frontend · Backend Integration · Web Development
+
+Developed full-stack web development skills.
+
+Worked with modern web technologies and application integration.
+
+Strengthened practical development and deployment knowledge.
+
+🛠️ Technical Skills
+
+💻 Languages
+
+
+
+Java Python C JavaScript SQL HTML5 CSS3
+
+⚛️ Frontend
+
+React Angular Vite Tailwind CSS Bootstrap
+
+⚙️ Backend
+
+Spring Boot Flask JDBC REST APIs Spring Security JWT Maven
+
+🗄️ Databases
+
+MySQL MongoDB PostgreSQL Supabase Firebase
+
+🤖 AI / GenAI
+
+Gemini API OpenAI API Generative AI Prompt Engineering RAG AI Agents
+
+☁️ Cloud / Deployment
+
+AWS Render Vercel Docker
+
+🔧 Tools
+
+Git GitHub Postman IntelliJ IDEA VS Code Selenium
+
+🚀 Featured Projects
+
+🎓 EduReach AI — AI Learning Platform
+
+<p align="center">
+<img src="./images/edureach-home.png" width="90%" alt="EduReach AI Home"/>
+</p>
+
+AI-powered learning and career-development platform designed around personalized education and intelligent assistance.
+
+Highlights: AI Tutor · Learning Paths · Question Generation · Exam Evaluation · Analytics · Interview Coach · Resume Builder · Career Advisor · Coding Mentor
+
+React TypeScript Vite Gemini API REST API
+
+🔗 Repository
+
+🛒 RetailOS AI — Autonomous Retail Intelligence
+
+<p align="center">
+<img src="./images/retailos-home.png" width="90%" alt="RetailOS AI Home"/>
+</p>
+
+A smart retail platform concept focused on inventory intelligence, sales analytics, automation and AI-assisted business decisions.
+
+Highlights: Inventory · Sales Analytics · Demand Intelligence · Product Insights · Dashboard · Automation
+
+Java Spring Boot React MySQL AI
+
+🔗 Repository: Coming Soon
+
+📦 Inventory Management System
+
+<p align="center">
+<img src="./images/inventory-home.png" width="90%" alt="Inventory Management"/>
+</p>
+
+Web-based inventory solution for managing products, stock information and day-to-day inventory operations.
+
+Java MySQL Web Development
+
+🔗 Repository
+
+🌾 Farm Link — Empowering Farmers
+
+<p align="center">
+<img src="./images/farmlink-home.png" width="90%" alt="Farm Link"/>
+</p>
+
+A digital platform designed to connect farmers with markets, resources and potential buyers.
+
+JavaScript HTML CSS
+
+🔗 Repository
+
+🛡️ SecureChain — Blockchain & Cybersecurity
+
+<p align="center">
+<img src="./images/securechain-home.png" width="90%" alt="SecureChain"/>
+</p>
+
+AI-powered blockchain security platform concept combining cybersecurity, trusted records and intelligent threat analysis.
+
+Highlights: Encrypted Storage · AI Threat Detection · Live Threats · IoT Trust · NFT Certificate Validation · Wallet Integration · Security Analytics
+
+Blockchain Python React AI Cybersecurity
+
+🔗 Repository: Coming Soon
+
+☁️ DDoS Cloud
+
+<p align="center">
+<img src="./images/ddos-home.png" width="90%" alt="DDoS Cloud"/>
+</p>
+
+Cloud-security project focused on detecting and mitigating DDoS attacks through monitoring and threat analysis.
+
+JavaScript Cloud Security Cybersecurity
+
+🔗 Repository
+
+✈️ Simple Airline Reservation System
+
+<p align="center">
+<img src="./images/airline-home.png" width="90%" alt="Airline Reservation"/>
+</p>
+
+Flight reservation application for searching flights, handling passenger information and managing bookings.
+
+HTML CSS JavaScript Python
+
+🔗 Repository
+
+📜 Certifications
+
+Certificate
+
+Organization
+
+☕ Java Developer
+
+Infosys
+
+🌐 Java Full Stack Web Developer
+
+Infosys
+
+☕ Java Foundation
+
+Infosys Springboard
+
+🗄️ Database Programming with SQL
+
+Oracle Academy
+
+📊 Big Data Analytics
+
+NPTEL
+
+🛡️ Cybersecurity
+
+Cisco Networking Academy
+
+🧪 Automated Regression Test Execution Framework
+
+Infosys Springboard
+
+🌐 Full Stack Web Development
+
+SquashApps
+
+🏆 Areas I Love Building
+
+🤖 AI-powered applications
+🌐 Full-stack web platforms
+⚙️ Scalable backend systems
+📊 Data-driven dashboards
+🔐 Secure applications
+☁️ Cloud-enabled solutions
+💡 Real-world automation
+
+📊 GitHub Analytics
 
 <div align="center">
 
-![Projects](https://img.shields.io/badge/Projects-6+-FFD700?style=flat-square)
-![Focus](https://img.shields.io/badge/Focus-Full--Stack%20%2B%20AI-00F7FF?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Open%20to%20Work-brightgreen?style=flat-square)
-![Coffee](https://img.shields.io/badge/Fueled%20by-☕%20Coffee-6F4E37?style=flat-square)
+<img height="165" src="https://github-readme-stats.vercel.app/api?username=Ponabinanth&show_icons=true&theme=tokyonight&hide_border=true&count_private=true"/>
+
+<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ponabinanth&layout=compact&theme=tokyonight&hide_border=true"/>
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=Ponabinanth&theme=tokyonight&hide_border=true"/>
+
+<img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=Ponabinanth&theme=tokyo-night&hide_border=true"/>
 
 </div>
 
----
-
-## 🖥️ Portfolio Preview
+🏆 GitHub Trophies
 
 <div align="center">
 
-[![Portfolio Preview](https://api.microlink.io/?url=https://ponabinanth-iczw.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&colorScheme=dark&viewport.width=1440&viewport.height=900&waitUntil=networkidle0)](https://ponabinanth-iczw.vercel.app/)
-
-### 👆 [**Click to explore the full live portfolio**](https://ponabinanth-iczw.vercel.app/)
+<img src="https://github-profile-trophy.vercel.app/?username=Ponabinanth&theme=tokyonight&no-frame=true&margin-w=8&row=2&column=4"/>
 
 </div>
 
-> 📌 This captures the **home page** of your live site (`/`) after it fully loads. If it ever shows blank, it's usually the screenshot service timing out on first load — re-run the README render and it'll refresh.
-
----
-
-## 🎓 Educational Timeline
-
-| Stage | Institution | Board / University | Year | Score |
-|---|---|---|---|---|
-| 🏫 10th | ✏️`[School name]` | ✏️`[Board]` | ✏️`[Year]` | ✏️`[%]` |
-| 🏫 12th | ✏️`[School name]` | ✏️`[Board]` | ✏️`[Year]` | ✏️`[%]` |
-| 🎓 Undergraduate | ✏️`[College name]` | ✏️`[University]` | ✏️`[Year–Year]` | ✏️`[CGPA]` |
-
----
-
-## 💼 Industrial Experience
-
-**🏢 ✏️`[Company / Organization Name]`**
-Role: ✏️`[e.g. Full-Stack Development Intern]` &nbsp;|&nbsp; Duration: ✏️`[Month Year – Month Year]`
-- ✏️`[Key responsibility or contribution]`
-- ✏️`[Technology or system worked on]`
-- ✏️`[Outcome or measurable impact]`
-
-`✏️ Tech Used`
-
-**🏢 ✏️`[Second Company / Organization Name]`**
-Role: ✏️`[e.g. Web Development Intern]` &nbsp;|&nbsp; Duration: ✏️`[Month Year – Month Year]`
-- ✏️`[Key responsibility or contribution]`
-- ✏️`[Technology or system worked on]`
-
-`✏️ Tech Used`
-
-> ✏️ *Add one block per internship — send me the company, role, dates, and bullet points and I'll format it.*
-
----
-
-## 🏅 Achievements & Hackathons
-
-| Event | Achievement | Year |
-|---|---|---|
-| ✏️`[Smart India Hackathon]` | ✏️`[Finalist / Winner / Participant]` | ✏️`[Year]` |
-| ✏️`[Hackathon / Coding Contest]` | ✏️`[Result]` | ✏️`[Year]` |
-| ✏️`[College Tech Fest]` | ✏️`[Result]` | ✏️`[Year]` |
-
-> ✏️ *Share your hackathon names, results, and years — I'll list them here in order.*
-
----
-
-## 📚 Academics
-
-| Metric | Detail |
-|---|---|
-| 🎓 Current CGPA | ✏️`[Add CGPA / percentage]` |
-| 📘 Key Coursework | ✏️`[DBMS, OOPS, OS, Computer Networks]` |
-| 🧪 Final Year Project | Smart Classroom Health & Energy Manager |
-| 🏅 Academic Highlights | ✏️`[Rank, scholarship, or notable achievement]` |
-
----
-
-## 🛠️ Skills
+🐍 Contribution Snake
 
 <div align="center">
-<img src="https://skillicons.dev/icons?i=java,js,html,css,spring,react,vite,tailwind,mysql,mongodb,git,github,postman,idea,vscode&theme=dark&perline=8" />
+
+<img src="https://raw.githubusercontent.com/Ponabinanth/Ponabinanth/output/github-contribution-grid-snake-dark.svg" width="95%" alt="GitHub Contribution Snake"/>
+
 </div>
 
-| Category | Stack |
-|---|---|
-| 💻 Languages | Java · JavaScript · HTML · CSS |
-| ⚙️ Frameworks & Libraries | Spring Boot · React · Vite · Tailwind CSS |
-| 🗄️ Databases | MySQL · MongoDB |
-| 🔐 Backend & APIs | REST API · JWT · Spring Security |
-| 🤖 AI & Tools | Google Gemini AI · Git · GitHub · Postman |
-
-## 🌱 Currently Learning
-
-`Generative AI Applications` · `Cloud Deployment` · `IoT-based Systems` · `System Design Basics`
-
-## 🗣️ Languages Known
-
-| Language | Proficiency |
-|---|---|
-| Tamil | ✏️`[Native]` |
-| English | ✏️`[Professional]` |
-| Hindi | ✏️`[Conversational]` |
-
----
-
-## 🚀 Projects
+🧠 Development Journey
 
 <div align="center">
 
-### 🎓 [EduReach — AI Learning Platform](https://github.com/Ponabinanth/Edu-Reach---learning-platform)
-<img src="https://opengraph.githubassets.com/1/Ponabinanth/Edu-Reach---learning-platform" width="80%"/>
+Learn → Build → Break → Debug → Improve → Deploy → Repeat 🔁
 
-AI-powered learning & career-development platform integrating the **Gemini API** for tutoring and academic insights.
-- 🧠 AI Tutor powered by Gemini API
-- 📊 Student dashboards & progress tracking
-- 🔐 JWT-secured authentication
+</div>
 
-`TypeScript` `Vite` `Gemini API` `REST API`
+📈 Coding Profiles
+
+<div align="center">
+
+
+
+</div>
+
+⚡ Quick Actions
+
+<div align="center">
+
+
+
+</div>
+
+📄 Resume: Add your resume URL here when ready.📅 Book Meeting: Add your scheduling link here when ready.📱 Phone: Add publicly only if you want it visible on GitHub.
+
+🌱 2026 Focus
+
+🚀 Strengthen Java + Spring Boot expertise
+
+🤖 Build production-ready AI applications
+
+🧩 Improve DSA and system-design skills
+
+☁️ Explore cloud and DevOps
+
+🌐 Contribute to open source
+
+💼 Prepare for software engineering opportunities
+
+💬 Developer Philosophy
+
+Think deeply. Build intelligently. Learn continuously. Create impact.
+
+<div align="center">
+
+⭐ Thanks for visiting my profile!
+
+If you find my projects useful, consider giving them a ⭐
 
 <br/>
 
-### ✈️ [Simple Airline Reservation System](https://github.com/Ponabinanth/Simple-Airline-Reservation-System)
-<img src="./assets/airline-reservation-system.png" width="85%"/>
-
-A flight booking and reservation system with a clean front-end backed by a lightweight Python server.
-- 🎟️ Seat selection & booking flow
-- 🖥️ Lightweight Python backend
-- 💳 Booking confirmation handling
-
-`JavaScript` `HTML` `CSS` `Python`
-
-<br/>
-
-### 📦 [Inventory Management System](https://github.com/Ponabinanth/Inventory-Management-System)
-<img src="./assets/inventory-management-system.png" width="85%"/>
-
-A web-based system for tracking stock levels and streamlining inventory operations.
-- 📋 Add / update / remove stock items
-- 📈 Stock-level tracking
-- 🔍 Search & filter inventory
-
-`JavaScript` `HTML` `CSS`
-
-<br/>
-
-### 🛡️ [DDoS-Cloud](https://github.com/Ponabinanth/DDoS-cloud)
-<img src="./assets/ddos-cloud-securechain.png" width="85%"/>
-
-A cloud-security project built for **Smart India Hackathon**, detecting and mitigating DDoS attacks.
-- 🚨 Traffic anomaly detection
-- ☁️ Cloud-environment simulation
-- 🛡️ Mitigation strategy modeling
-
-`JavaScript` `Cloud Security` `SIH`
-
-<br/>
-
-### 🌾 [Farm Link — Empowering Farmers](https://github.com/Ponabinanth/Farm-Link---Empowering-Farmers-)
-<img src="https://opengraph.githubassets.com/1/Ponabinanth/Farm-Link---Empowering-Farmers-" width="80%"/>
-
-A platform built to connect and empower farmers, bridging producers with resources and markets.
-- 🌱 Farmer-to-market connection
-- 📢 Resource & information sharing
-- 🤝 Community-driven support
-
-`JavaScript` `HTML` `CSS`
-
-<br/>
-
-### ⛓️ [BCS — Blockchain Project](https://github.com/Ponabinanth/BCS)
-<img src="./assets/bcs-blockchain.png" width="85%"/>
-
-A blockchain-secured template exploring decentralized, tamper-proof record management.
-- 🔗 Decentralized record-keeping model
-- 🔒 Tamper-proof data structure
-- 📜 Smart-contract style logic
-
-`Blockchain` `HTML` `Smart Contracts`
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:7B2FF7,100:00F7FF&height=110&section=footer" width="100%"/>
 
 </div>
-
-> 📌 Inventory Management, DDoS-Cloud, Airline Reservation & BCS now use your real project screenshots. EduReach and Farm Link still use GitHub's auto-generated card — I wasn't able to pull images from the Gemini/ChatGPT share links (they're private, login-gated share pages, not direct image URLs), so upload those two homepage screenshots the same way and I'll swap them in.
-
----
-
-## 🏆 Certificates
-
-| Certificate | Issuer | Date | Link |
-|---|---|---|---|
-| ✏️`[Certificate Name]` | ✏️`[Issuer]` | ✏️`[Month Year]` | [View](#) |
-| ✏️`[Certificate Name]` | ✏️`[Issuer]` | ✏️`[Month Year]` | [View](#) |
-| ✏️`[Certificate Name]` | ✏️`[Issuer]` | ✏️`[Month Year]` | [View](#) |
-| ✏️`[Certificate Name]` | ✏️`[Issuer]` | ✏️`[Month Year]` | [View](#) |
-
-> ✏️ *Send certificate names, issuers, dates & credential links (Coursera/Udemy/NPTEL etc.) — I'll add a row per certificate.*
-
----
-
-## 💬 Testimonials
-
-> ✏️ *"[A short quote from a mentor, professor, or teammate about working with you]"*
-> — ✏️`[Name, Role]`
-
-> ✏️ *"[Another testimonial goes here]"*
-> — ✏️`[Name, Role]`
-
-> ✏️ *"[A third testimonial can go here]"*
-> — ✏️`[Name, Role]`
-
-> ✏️ *Send me a line or two from anyone who's worked with you and I'll add it here as a quote card.*
-
----
-
-## 🔬 Research & Domain Interests
-
-`Generative AI in EdTech` · `Secure Full-Stack Architectures` · `IoT-Driven Smart Systems` · `Blockchain for Data Integrity`
-
----
-
-## ✍️ Blog & Writing
-
-- ✏️`[Article/Post title]` — [Read →](#)
-- ✏️`[Article/Post title]` — [Read →](#)
-
-> ✏️ *If you write on Medium, Dev.to, or Hashnode, share the links and I'll list your latest posts here — or wire up an auto-updating feed.*
-
----
-
-## 🎯 Goals for This Year
-
-```
-✅ Ship EduReach AI to production
-✅ Finalize & build the Smart Classroom Health & Energy Manager
-✅ Sharpen DSA consistency on LeetCode
-✅ Land an internship / full-time full-stack role
-✅ Contribute to at least one open-source project
-```
-
----
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/main/images/blue-lines.gif" width="100%">
-</div>
-
-## 🕹️ Interests Outside Code
-
-`✏️ Add a hobby` · `✏️ Add a hobby` · `✏️ Add a hobby` · `✏️ Add a hobby`
-
-> ✏️ *A couple of personal interests (sports, music, gaming, reading etc.) make the profile feel more human — send a few and I'll drop them in as tags above.*
-
----
-
-## 🧰 Tools & Platforms
-
-`VS Code` `IntelliJ IDEA` `Postman` `Git & GitHub` `Figma` `Vercel` `MongoDB Atlas` `MySQL Workbench`
-
----
-
-## 🧩 Fun Facts
-
-```
-🔁 Learn → Build → Break → Debug → Improve → Repeat
-☕ Runs on coffee and console.log()
-🌙 Most productive after midnight commits
-📚 Always got one more tab open on Stack Overflow
-```
-
----
-
-## 📊 GitHub Analytics
-
-<div align="center">
-
-<img height="160" src="https://github-readme-stats.vercel.app/api?username=Ponabinanth&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&bg_color=0D1117&title_color=FFD700&icon_color=00F7FF" />
-<img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ponabinanth&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=FFD700" />
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=Ponabinanth&theme=tokyonight&hide_border=true&background=0D1117&ring=FFD700&fire=00F7FF" />
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Ponabinanth&theme=tokyo-night&hide_border=true&bg_color=0D1117&color=FFD700&line=00F7FF&point=ffffff" width="95%"/>
-
-<img src="https://github-profile-trophy.vercel.app/?username=Ponabinanth&theme=tokyonight&no-frame=true&row=1&column=7&margin-w=8" />
-
-</div>
-
-## 📈 Coding Profile
-
-<div align="center">
-
-<img src="https://leetcode-stats-card.vercel.app/?username=Abinanth1810&theme=dark" />
-
-</div>
-
----
-
-## 🎯 My Development Journey
-
-<div align="center">
-
-**Learn → Build → Break → Debug → Improve → Repeat** 🔁
-
-</div>
-
----
-
-## 🤝 Let's Connect
-
-<div align="center">
-
-📧 abinanth574@gmail.com &nbsp;•&nbsp; 📱 ✏️`[Phone number]`
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-ponabinanths-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ponabinanths/)
-[![GitHub](https://img.shields.io/badge/GitHub-Ponabinanth-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Ponabinanth)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit_Site-000000?style=flat-square&logoColor=white)](https://ponabinanth-iczw.vercel.app/)
-[![LeetCode](https://img.shields.io/badge/LeetCode-Abinanth1810-FFA116?style=flat-square&logo=leetcode&logoColor=black)](https://leetcode.com/u/Abinanth1810/)
-[![Gmail](https://img.shields.io/badge/Email-abinanth574%40gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:abinanth574@gmail.com)
-
-### ⚡ Quick Actions
-
-[![Book a Meeting](https://img.shields.io/badge/📅_Book_a_Meeting-4285F4?style=for-the-badge&logoColor=white)](#add-your-calendly-link)
-[![Schedule Interview](https://img.shields.io/badge/🗓️_Schedule_Interview-34A853?style=for-the-badge&logoColor=white)](#add-your-calendly-link)
-[![Email Me](https://img.shields.io/badge/✉️_Email_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:abinanth574@gmail.com?subject=Let's%20Connect)
-[![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ponabinanths/)
-[![GitHub](https://img.shields.io/badge/🐙_GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ponabinanth)
-[![Download Resume](https://img.shields.io/badge/📄_Download_Resume-FF6B6B?style=for-the-badge&logoColor=white)](#add-link-to-hosted-resume-pdf)
-
-⭐ **Thanks for visiting my profile! Feel free to explore my repositories** 🚀
-
-</div>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:1a0a2e,100:0D1117&height=100&section=footer" width="100%"/>
