@@ -6,7 +6,48 @@
 
 <img src="https://capsule-render.vercel.app/api?type=soft&color=0:0D1117,50:1a0a2e,100:0D1117&height=8&section=header" width="100%"/>
 
-### 🌐 [**View My Live Portfolio →**](https://ponabinanth-iczw.vercel.app/)
+</div>
+
+---
+
+## 🚪 The Gate Opens — Choose Your Path
+
+<div align="center">
+
+*Two roads lead deeper into my work. Pick one to begin.*
+
+<table>
+<tr>
+<td align="center" width="50%">
+
+### 🌐 Path One
+**The Portfolio**
+
+*See the finished experience — live projects, case studies, and design in motion.*
+
+[![Enter Portfolio](https://img.shields.io/badge/ENTER_PORTFOLIO-0D1117?style=for-the-badge&logoColor=FFD700&color=0D1117&labelColor=FFD700)](https://ponabinanth-iczw.vercel.app/)
+
+</td>
+<td align="center" width="50%">
+
+### 🐙 Path Two
+**The Code**
+
+*See how it's built — repositories, commits, and the engineering behind it.*
+
+[![Enter GitHub](https://img.shields.io/badge/ENTER_GITHUB-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ponabinanth)
+
+</td>
+</tr>
+</table>
+
+*Can't decide? Scroll on — this page is the bridge between both.*
+
+</div>
+
+<img src="https://capsule-render.vercel.app/api?type=soft&color=0:0D1117,50:1a0a2e,100:0D1117&height=6&section=header" width="100%"/>
+
+<div align="center">
 
 [![Portfolio](https://img.shields.io/badge/🌐_Portfolio-0D1117?style=for-the-badge&logoColor=FFD700&color=0D1117)](https://ponabinanth-iczw.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ponabinanth-s-236605382)
@@ -101,7 +142,6 @@ Role: Full Stack Web Development Intern &nbsp;|&nbsp; Duration: 2025
 `JavaScript` `REST API` `MySQL` `MongoDB`
 
 ---
-
 
 ## 📚 Academics
 
@@ -230,14 +270,11 @@ A system that hashes and stores documents on a blockchain to prevent tampering, 
 
 ---
 
-
-
 ## 🔬 Research & Domain Interests
 
 `Generative AI in EdTech` · `Secure Full-Stack Architectures` · `IoT-Driven Smart Systems` · `Blockchain for Data Integrity`
 
 ---
-
 
 ## 🎯 Goals for This Year
 
@@ -257,7 +294,7 @@ A system that hashes and stores documents on a blockchain to prevent tampering, 
 
 ## 🕹️ Interests Outside Code
 
-`✏️ Blockchain` · `✏️ AI ` · `✏️ Cricket` · `✏️ Add a hobby`
+`✏️ Blockchain` · `✏️ AI` · `✏️ Cricket` · `✏️ Add a hobby`
 
 > ✏️ *A couple of personal interests (sports, music, gaming, reading etc.) make the profile feel more human — send a few and I'll drop them in as tags above.*
 
