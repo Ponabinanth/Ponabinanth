@@ -158,14 +158,33 @@ export default function ProjectsSection({ onScrollToSection }: ProjectsSectionPr
 
                 {/* Left Column: Project Overview */}
                 <div className="flex-1 space-y-6">
+                  {/* AI Generated Image Banner */}
+                  {proj.imageUrl && (
+                    <div className="relative w-full h-48 md:h-56 rounded-2xl overflow-hidden border border-[var(--glass-border)] bg-[var(--bg-primary)] group shadow-lg">
+                      <img 
+                        src={proj.imageUrl} 
+                        alt={proj.title} 
+                        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[var(--glass-bg)] via-transparent to-transparent pointer-events-none" />
+                      <div className="absolute bottom-3 left-3 right-3 flex justify-between items-center bg-[var(--glass-bg)] border border-[var(--glass-border)] px-3 py-1.5 rounded-xl backdrop-blur-md text-[11px] font-mono text-cyan-400 font-semibold shadow-sm">
+                        <span className="flex items-center gap-1.5">
+                          <Sparkles className="h-3.5 w-3.5 text-cyan-400" />
+                          AI System Interface Preview
+                        </span>
+                        <span className="text-[10px] text-secondary font-mono">System Mockup</span>
+                      </div>
+                    </div>
+                  )}
+
                   <div>
-                    <span className="text-[10px] text-cyan-400 font-mono tracking-wider font-bold bg-cyan-500/10 px-2.5 py-1 rounded-md">
+                    <span className="text-[10px] text-cyan-400 font-mono tracking-wider font-bold bg-cyan-500/10 px-2.5 py-1 rounded-md border border-cyan-500/20">
                       FEATURED CASE #{idx + 1}
                     </span>
                     <h3 className="text-2xl font-bold font-display text-primary mt-3 flex items-center gap-2">
                       {proj.title}
                     </h3>
-                    <p className="text-xs text-secondary font-medium font-sans mt-1">{proj.description}</p>
+                    <p className="text-xs text-secondary font-medium font-sans mt-1.5 leading-relaxed">{proj.description}</p>
                   </div>
 
                   {/* Tech stack badges */}
