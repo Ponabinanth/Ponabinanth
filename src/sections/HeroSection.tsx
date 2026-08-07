@@ -95,6 +95,18 @@ export default function HeroSection({
             I am a Computer Science Engineering student passionate about building highly robust, scalable Java backend microservices, intelligent Generative AI agents, and secure decentralized blockchain networks.
           </p>
 
+          {/* Quick Tech Badges */}
+          <div className="flex flex-wrap gap-2 pt-1">
+            {["Java / Spring Boot", "React & TypeScript", "Gemini AI / LLMs", "MySQL & Cloud", "Web3 / Solidity"].map((tech, i) => (
+              <span 
+                key={i} 
+                className="px-3 py-1 bg-[var(--accent-glow)] border border-[var(--glass-border)] rounded-lg text-xs font-mono text-cyan-400 font-medium"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+
           <div className="flex flex-wrap gap-4 pt-2 items-center">
             <button
               onClick={onToggleVoiceIntro}
