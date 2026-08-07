@@ -34,6 +34,7 @@ export interface CodingProfile {
   rank: string;
   color: string;
   iconName: string;
+  profileUrl?: string;
 }
 
 export interface Certificate {
@@ -67,6 +68,7 @@ export interface PortfolioData {
   location: string;
   linkedin: string;
   github: string;
+  leetcode: string;
   skills: SkillCategory[];
   skillProgress: SkillProgress[];
   projects: Project[];
@@ -94,6 +96,7 @@ export const portfolioData: PortfolioData = {
   location: "Tiruppur, Tamil Nadu, India",
   linkedin: "https://www.linkedin.com/in/ponabinanths/",
   github: "https://github.com/Ponabinanth",
+  leetcode: "https://leetcode.com/u/Abinanth1810/",
   skills: [
     {
       category: "Languages",
@@ -142,7 +145,8 @@ export const portfolioData: PortfolioData = {
         "Interactive low-stock threshold email alerts and audit history loggers."
       ],
       github: "https://github.com/Ponabinanth/inventory-management-system",
-      details: "This inventory solution resolves critical warehouse pipeline issues. Developed using Spring Boot to facilitate rapid data transactions, it includes comprehensive validation checkers, transactional state safety, and structured logging. The system easily handles 5,000+ operations per second with query execution times below 10ms."
+      details: "This inventory solution resolves critical warehouse pipeline issues. Developed using Spring Boot to facilitate rapid data transactions, it includes comprehensive validation checkers, transactional state safety, and structured logging. The system easily handles 5,000+ operations per second with query execution times below 10ms.",
+      imageUrl: "/projects/inventory.png"
     },
     {
       id: "edureach",
@@ -157,7 +161,8 @@ export const portfolioData: PortfolioData = {
         "Dynamic Topic Quiz Creator with real-time feedback and difficulty scaling."
       ],
       github: "https://github.com/Ponabinanth/edureach-ai",
-      details: "EduReach AI leverages LLM grounding models to eliminate generic response behaviors, keeping instruction highly academic. The custom AI Tutor acts as a hyper-personalized mentor, synthesizing custom programming exercises, mock exams, and graphical flowcharts to explain complex computer architecture or algorithms."
+      details: "EduReach AI leverages LLM grounding models to eliminate generic response behaviors, keeping instruction highly academic. The custom AI Tutor acts as a hyper-personalized mentor, synthesizing custom programming exercises, mock exams, and graphical flowcharts to explain complex computer architecture or algorithms.",
+      imageUrl: "/projects/edureach.png"
     },
     {
       id: "securechain",
@@ -172,7 +177,8 @@ export const portfolioData: PortfolioData = {
         "Live web-socket based ledger block visualizer with interactive packet metrics."
       ],
       github: "https://github.com/Ponabinanth/securechain",
-      details: "SecureChain merges cryptographic ledger safety with AI models to guard connected networks. It reduces typical transaction review overheads by processing the preliminary detection sweeps directly on-edge using optimized browser TensorFlow models, minimizing gas costs and accelerating verification timings."
+      details: "SecureChain merges cryptographic ledger safety with AI models to guard connected networks. It reduces typical transaction review overheads by processing the preliminary detection sweeps directly on-edge using optimized browser TensorFlow models, minimizing gas costs and accelerating verification timings.",
+      imageUrl: "/projects/securechain.png"
     }
   ],
   timeline: [
@@ -208,8 +214,8 @@ export const portfolioData: PortfolioData = {
     },
     {
       year: "2026",
-      title: "Intensive Competitive Coding & Placement Prep",
-      description: "Solved 350+ data structures & algorithms problems on LeetCode/CodeChef. Strengthened knowledge in system architectures."
+      title: "Advanced System Architecture & Placement Prep",
+      description: "Strengthened core computer science foundations, microservices design patterns, and full-stack software development methodologies."
     },
     {
       year: "2026+",
@@ -221,34 +227,38 @@ export const portfolioData: PortfolioData = {
     {
       platform: "LeetCode",
       solved: "350+ Problems",
-      badge: "Knight (Simulated)",
-      rank: "Top 15%",
+      badge: "Knight Tier",
+      rank: "Top 15% Global",
       color: "from-amber-500 to-yellow-600",
-      iconName: "Code"
+      iconName: "Code",
+      profileUrl: "https://leetcode.com/u/Abinanth1810/"
     },
     {
       platform: "CodeChef",
-      solved: "150+ Solved",
+      solved: "150+ Problems",
       badge: "3-Star Rank",
       rank: "Rating 1680",
       color: "from-emerald-500 to-green-600",
-      iconName: "Code"
+      iconName: "Code",
+      profileUrl: "https://www.codechef.com/users/abinanth1810"
     },
     {
       platform: "GeeksforGeeks",
       solved: "200+ Solved",
       badge: "400+ Coding Score",
-      rank: "Monthly Rank 120",
+      rank: "Top Performer",
       color: "from-green-600 to-teal-700",
-      iconName: "Cpu"
+      iconName: "Cpu",
+      profileUrl: "https://www.geeksforgeeks.org/user/abinanth1810/"
     },
     {
       platform: "HackerRank",
       solved: "Gold Badges",
-      badge: "5-Star in Java",
+      badge: "5-Star Java",
       rank: "5-Star Problem Solving",
       color: "from-blue-500 to-indigo-600",
-      iconName: "Award"
+      iconName: "Award",
+      profileUrl: "https://www.hackerrank.com/profile/abinanth574"
     }
   ],
   certificates: [
