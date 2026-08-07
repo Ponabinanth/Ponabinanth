@@ -10,7 +10,127 @@
 
 ---
 
-## 🚪 The Gate Opens — Choose Your Path
+# 👨‍💻 Professional Narrative
+
+> Passionate **Full-Stack Developer** with expertise in **Java, Spring Boot, React, REST APIs, SQL, AI, and Cloud Technologies**. I enjoy transforming innovative ideas into scalable, production-ready applications that solve real-world challenges. My focus is on clean architecture, high-performance backend systems, and AI-powered solutions.
+
+---
+
+# 🚀 About Me
+
+```yaml
+Name      : Ponabinanth S
+Role      : Full-Stack Developer
+Degree    : B.E Computer Science & Engineering
+College   : V.S.B Engineering College
+CGPA      : 8.0
+Location  : Karur, Tamil Nadu, India
+Graduation: 2027
+Focus     : AI • Full Stack • Cloud • Backend
+```
+
+# 💻 Featured Case Studies
+
+| Project | Tech Stack | Highlights |
+| :--- | :--- | :--- |
+| 📦 **Inventory Management System** | Spring Boot, React, MySQL, AWS | 3-Tier Enterprise architecture, real-time stock depletion console, RBAC authentication |
+| 🎓 **EduReach AI (Personalized Tutor)** | Gemini API, Web Speech API, React | Voice-interactive AI tutor, dynamic skill roadmap generator, ATS resume analysis |
+| 🛡️ **SecureChain Security Suite** | Solidity, Web3.js, TensorFlow.js | Decentralized IoT transaction authorization, client-side ML anomaly detection |
+
+---
+
+# 🎯 Current Focus
+
+- 🌱 Mastering Spring Boot & Microservices
+- 🤖 Building AI Powered Applications
+- ⚛️ Developing Modern React Applications
+- ☁️ Exploring Cloud & DevOps
+- 🚀 Solving Real World Problems
+- 💡 Open Source Contributions
+
+---
+
+# ⭐ Core Strengths
+
+| Backend | Frontend | AI | Database |
+|---------|----------|----|----------|
+| Spring Boot | React | Gemini API | MySQL |
+| REST APIs | Tailwind CSS | OpenAI | MongoDB |
+| JWT | JavaScript | Prompt Engineering | PostgreSQL |
+
+| Development | Problem Solving | Leadership | Communication |
+|-------------|----------------|------------|---------------|
+| Git & GitHub | DSA | Team Player | Public Speaking |
+| Clean Code | Algorithms | Fast Learner | Collaboration |
+
+---
+
+# 📍 Professional Snapshot
+
+| Property | Details |
+|-----------|---------|
+| 👤 Name | Ponabinanth S |
+| 💼 Role | Full-Stack Developer |
+| 🎓 Degree | BE Computer Science |
+| 🏫 College | VSB Engineering College |
+| 📍 Location | Tamil Nadu, India |
+| 🎯 Interest | AI • Web • Cloud |
+| 💬 Languages | Tamil, English |
+| 💻 Experience | Java Full Stack |
+
+---
+
+# 🎓 Educational Timeline
+
+| Year | Qualification | Institution |
+|------|---------------|------------|
+| 2024-2027 | BE Computer Science | VSB Engineering College |
+| 2023 | Higher Secondary | RKR Grks Matric Hr Sec School |
+| 2021 | SSLC | Shri Ganga Matriculation School |
+
+---
+
+# 💼 Industrial Experience
+
+## 🏢 Infosys
+
+**Java Full Stack Developer Intern**
+
+- Java Development
+- Spring Boot
+- REST APIs
+- JDBC
+- SQL
+- Git
+- Team Collaboration
+
+---
+
+## 🏢 SquashApps
+
+**Full Stack Development**
+
+- React Development
+- Backend Integration
+- Database Management
+- API Development
+- Deployment
+
+---
+
+# 🏆 Academic Highlights
+
+- 🎯 CGPA : **8.0**
+- 🥇 Java Full Stack Developer
+- 🥇 AI Application Developer
+- 🥇 Database Programming
+- 🥇 Big Data Analytics
+- 🥇 Cyber Security
+
+---
+
+# 🛠 Tech Stack
+>>>>>>> 47ea1b5 (docs(readme): add Featured Case Studies table and project architecture highlights)
 
 <div align="center">
 
