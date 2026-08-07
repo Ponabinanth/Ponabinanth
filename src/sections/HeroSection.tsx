@@ -110,6 +110,7 @@ export default function HeroSection({
           <div className="flex flex-wrap gap-4 pt-2 items-center">
             <button
               onClick={onToggleVoiceIntro}
+              aria-label={isSpeakingIntro ? "Stop voice intro" : "Play voice intro"}
               className={`flex items-center gap-2 px-6 py-3.5 rounded-full font-medium transition-all cursor-pointer text-sm shadow-sm hover:shadow-md ${
                 isSpeakingIntro
                   ? "bg-red-500 text-white animate-pulse"
