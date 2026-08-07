@@ -1,3 +1,8 @@
+/**
+ * Portfolio Data Models & Type Definitions
+ * Represents structured schemas for projects, skills, timeline, and education.
+ */
+
 export interface Project {
   id: string;
   title: string;
