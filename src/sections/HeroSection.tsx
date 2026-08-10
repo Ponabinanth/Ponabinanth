@@ -1,191 +1,163 @@
-import { useState, useEffect } from "react";
+import React from "react";
 import { motion } from "motion/react";
-import { FileText, Sparkles, Volume2, VolumeX, CheckCircle2 } from "lucide-react";
+import { FileText, Sparkles, Github, Linkedin, ArrowRight, Code2, Heart, CheckCircle2, Quote } from "lucide-react";
+import { portfolioData } from "../data.js";
 
 interface HeroSectionProps {
   onScrollToSection: (id: string) => void;
   onOpenResume: () => void;
-  isSpeakingIntro: boolean;
-  onToggleVoiceIntro: () => void;
 }
 
-export default function HeroSection({
-  onScrollToSection,
-  onOpenResume,
-  isSpeakingIntro,
-  onToggleVoiceIntro
-}: HeroSectionProps) {
-  const titles = [
-    "Computer Science Student",
-    "Full Stack Developer",
-    "AI Systems Engineer",
-    "Blockchain Enthusiast",
-    "Problem Solver"
-  ];
-
-  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
-  const [typedText, setTypedText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(100);
-  const [imgSrc, setImgSrc] = useState("/ponabinanth.jpg");
-
-  useEffect(() => {
-    let timer: any;
-    const fullText = titles[currentTitleIndex];
-
-    if (!isDeleting) {
-      timer = setTimeout(() => {
-        setTypedText(fullText.substring(0, typedText.length + 1));
-        setTypingSpeed(70);
-      }, typingSpeed);
-
-      if (typedText === fullText) {
-        timer = setTimeout(() => {
-          setIsDeleting(true);
-        }, 2000);
-      }
-    } else {
-      timer = setTimeout(() => {
-        setTypedText(fullText.substring(0, typedText.length - 1));
-        setTypingSpeed(30);
-      }, typingSpeed);
-
-      if (typedText === "") {
-        setIsDeleting(false);
-        setCurrentTitleIndex((prev) => (prev + 1) % titles.length);
-      }
-    }
-
-    return () => clearTimeout(timer);
-  }, [typedText, isDeleting, currentTitleIndex]);
-
+export default function HeroSection({ onScrollToSection, onOpenResume }: HeroSectionProps) {
   return (
-    <section id="home" className="relative min-h-[85vh] flex flex-col justify-center px-6 overflow-hidden">
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full filter blur-3xl -z-10 animate-pulse" />
+    <section id="home" className="relative min-h-[90vh] flex flex-col justify-center px-6 py-20 overflow-hidden">
       
-      <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-12 relative z-10">
+      {/* Background Ambient Glow */}
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full filter blur-[120px] -z-10 animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-500/10 rounded-full filter blur-[100px] -z-10" />
+
+      <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
         
+        {/* Left Column Text Content */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="lg:col-span-7 space-y-8 text-left mt-10"
+          transition={{ duration: 0.8 }}
+          className="lg:col-span-7 space-y-6 text-left"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[var(--accent-glow)] border border-[var(--glass-border)] rounded-full text-xs font-medium text-secondary shadow-sm">
-            <span className="flex h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
-            Available for new opportunities
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-xs font-mono text-cyan-400">
+            <span className="flex h-2 w-2 rounded-full bg-cyan-400 animate-ping" />
+            <Code2 className="h-3.5 w-3.5 text-cyan-400" />
+            <span>Welcome To My Portfolio</span>
           </div>
 
-          <div className="space-y-4">
-            <p className="text-secondary text-sm font-medium tracking-wide">Hi there, my name is</p>
-            
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-primary leading-tight">
-              Ponabinanth S
+          <div className="space-y-3">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-primary font-display">
+              PONABINANTH S
             </h1>
 
-            <div className="h-10 flex items-center">
-              <p className="text-xl md:text-2xl font-medium text-blue-500 flex items-center">
-                {typedText}
-                <span className="w-[2px] h-6 bg-blue-500 animate-pulse ml-1" />
-              </p>
-            </div>
+            <p className="text-lg sm:text-xl md:text-2xl font-bold text-cyan-400 font-sans tracking-wide">
+              Software Engineer <span className="text-secondary">•</span> Full-Stack Developer <span className="text-secondary">•</span> AI Enthusiast
+            </p>
           </div>
 
-          <p className="text-base md:text-lg text-secondary max-w-xl leading-relaxed">
-            I am a Computer Science Engineering student passionate about building highly robust, scalable Java backend microservices, intelligent Generative AI agents, and secure decentralized blockchain networks.
+          <p className="text-base sm:text-lg text-secondary max-w-2xl leading-relaxed font-sans border-l-2 border-cyan-500/40 pl-4 py-1">
+            I build intelligent, scalable, and user-focused software solutions by combining full-stack development, artificial intelligence, cybersecurity, and emerging technologies.
           </p>
 
-          {/* Quick Tech Badges */}
-          <div className="flex flex-wrap gap-2 pt-1">
-            {["Java / Spring Boot", "React & TypeScript", "Gemini AI / LLMs", "MySQL & Cloud", "Web3 / Solidity"].map((tech, i) => (
+          {/* Quick Badges */}
+          <div className="flex flex-wrap gap-2 pt-2">
+            {["Java & Spring Boot", "React.js & Full-Stack", "AI & LLM Integration", "Cybersecurity & Cloud", "MySQL & PostgreSQL"].map((badge, i) => (
               <span 
                 key={i} 
-                className="px-3 py-1 bg-[var(--accent-glow)] border border-[var(--glass-border)] rounded-lg text-xs font-mono text-cyan-400 font-medium"
+                className="px-3 py-1 bg-[var(--accent-glow)] border border-[var(--glass-border)] rounded-lg text-xs font-mono text-cyan-400 font-semibold"
               >
-                {tech}
+                {badge}
               </span>
             ))}
           </div>
 
-          <div className="flex flex-wrap gap-4 pt-2 items-center">
+          {/* Action Buttons */}
+          <div className="flex flex-wrap gap-4 pt-4 items-center">
             <button
-              onClick={onToggleVoiceIntro}
-              aria-label={isSpeakingIntro ? "Stop voice intro" : "Play voice intro"}
-              className={`flex items-center gap-2 px-6 py-3.5 rounded-full font-medium transition-all cursor-pointer text-sm shadow-sm hover:shadow-md ${
-                isSpeakingIntro
-                  ? "bg-red-500 text-white animate-pulse"
-                  : "bg-[var(--text-primary)] text-[var(--bg-primary)] hover:scale-105 active:scale-95"
-              }`}
+              onClick={() => onScrollToSection("projects")}
+              className="flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold text-sm shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.7)] hover:scale-105 active:scale-95 transition-all cursor-pointer group"
             >
-              {isSpeakingIntro ? (
-                <>
-                  <VolumeX className="h-4 w-4" />
-                  <span>Stop Intro</span>
-                </>
-              ) : (
-                <>
-                  <Volume2 className="h-4 w-4" />
-                  <span>Play Intro</span>
-                </>
-              )}
-            </button>
-
-            <button
-              onClick={() => onScrollToSection("ai-recruiter-mode")}
-              className="flex items-center gap-2 bg-[var(--glass-bg)] hover:bg-[var(--accent-glow)] border border-[var(--glass-border)] text-primary px-6 py-3.5 rounded-full font-medium hover:scale-105 active:scale-95 transition-all cursor-pointer text-sm shadow-sm hover:shadow-md group"
-            >
-              <Sparkles className="h-4 w-4 text-blue-500 group-hover:animate-spin" />
-              AI Assistant
+              <span>Explore My Work</span>
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </button>
 
             <button
               onClick={onOpenResume}
-              className="flex items-center gap-2 bg-[var(--glass-bg)] hover:bg-[var(--accent-glow)] border border-[var(--glass-border)] text-secondary hover:text-primary px-6 py-3.5 rounded-full font-medium hover:scale-105 active:scale-95 transition-all cursor-pointer text-sm shadow-sm hover:shadow-md"
+              className="flex items-center gap-2 bg-[var(--glass-bg)] hover:bg-[var(--accent-glow)] border border-[var(--glass-border)] text-primary px-6 py-3.5 rounded-full font-medium text-sm hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-sm"
             >
-              <FileText className="h-4 w-4 text-blue-500" />
-              View Resume
+              <FileText className="h-4 w-4 text-cyan-400" />
+              <span>Download Resume</span>
             </button>
+
+            <a
+              href="https://github.com/Ponabinanth"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-[var(--glass-bg)] hover:bg-[var(--accent-glow)] border border-[var(--glass-border)] text-secondary hover:text-primary px-5 py-3.5 rounded-full font-medium text-sm transition-all cursor-pointer shadow-sm"
+            >
+              <Github className="h-4 w-4 text-cyan-400" />
+              <span>GitHub</span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/ponabinanths/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-[var(--glass-bg)] hover:bg-[var(--accent-glow)] border border-[var(--glass-border)] text-secondary hover:text-primary px-5 py-3.5 rounded-full font-medium text-sm transition-all cursor-pointer shadow-sm"
+            >
+              <Linkedin className="h-4 w-4 text-cyan-400" />
+              <span>LinkedIn</span>
+            </a>
           </div>
         </motion.div>
 
+        {/* Right Column: Actual Profile Photo Card of Ponabinanth S */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: 1, delay: 0.2 }}
           className="lg:col-span-5 flex justify-center lg:justify-end"
         >
-          <div className="relative group max-w-[320px] w-full">
-            <div className="absolute -inset-4 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 rounded-[2.5rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-1000" />
+          <div className="relative group max-w-[360px] w-full">
+            <div className="absolute -inset-4 bg-gradient-to-tr from-cyan-500/20 via-blue-500/20 to-purple-500/20 rounded-[2.5rem] blur-2xl opacity-60 group-hover:opacity-100 transition duration-1000" />
             
-            <div className="relative bg-[var(--glass-bg)] border border-[var(--glass-border)] rounded-[2rem] p-3 shadow-xl backdrop-blur-xl flex flex-col justify-between transition-transform duration-500 group-hover:-translate-y-2">
+            <div className="relative glass-panel border border-[var(--glass-border)] hover:border-cyan-500/50 rounded-[2.5rem] p-6 shadow-2xl backdrop-blur-2xl transition-all duration-500 group-hover:-translate-y-2 space-y-6">
               
-              <div className="flex justify-between items-center px-3 py-2 mb-3 bg-[var(--accent-glow)] rounded-xl border border-[var(--glass-border)] text-[10px] font-medium text-secondary">
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="h-3.5 w-3.5 text-blue-500" />
-                  <span className="uppercase tracking-wider text-primary">Verified Profile</span>
+              {/* Profile Image & Header */}
+              <div className="flex items-center gap-4">
+                <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-cyan-400 shadow-md flex-shrink-0">
+                  <img
+                    src="/ponabinanth-circle.png"
+                    alt="Ponabinanth S"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = "/ponabinanth-profile.jpg";
+                    }}
+                  />
+                  <span className="absolute bottom-0 right-0 w-4 h-4 bg-emerald-400 border-2 border-slate-950 rounded-full" />
                 </div>
-              </div>
 
-              <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden bg-[var(--bg-primary)] border border-[var(--glass-border)]">
-                <img
-                  src={imgSrc}
-                  alt="Ponabinanth S"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  onError={() => {
-                    if (imgSrc !== "/assets/ponabinanth.jpg") {
-                      setImgSrc("/assets/ponabinanth.jpg");
-                    }
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--glass-bg)] via-transparent to-transparent pointer-events-none" />
-                
-                <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center bg-[var(--glass-bg)] border border-[var(--glass-border)] px-4 py-2 rounded-xl backdrop-blur-xl text-xs font-medium text-primary shadow-sm">
-                  <span>Java & AI Dev</span>
-                  <span className="flex items-center gap-1.5 text-blue-500">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" /> Active
+                <div>
+                  <h3 className="text-xl font-bold font-display text-primary">Hi, I'm Ponabinanth S</h3>
+                  <p className="text-xs font-mono text-cyan-400 mt-0.5">B.E. Computer Science Student</p>
+                  <span className="inline-flex items-center gap-1 text-[10px] font-mono text-emerald-400 mt-1">
+                    <CheckCircle2 className="h-3 w-3" /> Open to Opportunities
                   </span>
                 </div>
               </div>
+
+              {/* Bio Highlights */}
+              <div className="space-y-2.5 text-xs font-sans text-secondary border-t border-[var(--glass-border)] pt-4">
+                <div className="flex items-center gap-2">
+                  <Code2 className="h-4 w-4 text-cyan-400" />
+                  <span>Passionate about coding & system design</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Sparkles className="h-4 w-4 text-purple-400" />
+                  <span>Love building real-world software solutions</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Heart className="h-4 w-4 text-pink-400" />
+                  <span>Explorer of AI, Full-Stack & Cloud</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+                  <span>Always learning, always growing</span>
+                </div>
+              </div>
+
+              {/* Quote Footer */}
+              <div className="bg-[var(--accent-glow)] p-4 rounded-2xl border border-[var(--glass-border)] text-xs italic font-serif text-cyan-300 flex items-start gap-2">
+                <Quote className="h-4 w-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                <span>"Code is my language, Innovation is my passion."</span>
+              </div>
+
             </div>
           </div>
         </motion.div>
