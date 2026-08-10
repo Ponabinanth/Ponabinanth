@@ -1,19 +1,23 @@
+import React from "react";
+import { portfolioData, SkillCategory } from "../data.js";
 import { motion } from "motion/react";
-import { portfolioData } from "../data.js";
-import { CheckCircle2, Cpu, Brain, Layers, Database, Shield, Zap } from "lucide-react";
+import { Cpu, Code2, Layout, Server, Database, BrainCircuit, Cloud } from "lucide-react";
 
 export default function SkillsSection() {
-  const categoryIcons: { [key: string]: any } = {
-    "Languages": Cpu,
-    "Frontend": Layers,
-    "Backend": Database,
-    "Database & Cloud": Database,
-    "AI & ML": Brain,
-    "Developer Tools": Shield
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case "Languages": return Code2;
+      case "Frontend": return Layout;
+      case "Backend": return Server;
+      case "Databases": return Database;
+      case "AI": return BrainCircuit;
+      case "Cloud / Tools": return Cloud;
+      default: return Cpu;
+    }
   };
 
   return (
-    <section id="skills" className="py-20 relative">
+    <section id="skills" className="py-24 relative">
       <div className="max-w-6xl mx-auto px-6">
         
         {/* Section Heading */}
@@ -25,97 +29,51 @@ export default function SkillsSection() {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-xs font-mono text-cyan-400 mb-3">
-            <Zap className="h-3.5 w-3.5" />
-            Technical Stack
+            <Cpu className="h-3.5 w-3.5" />
+            Tech Stack Matrix
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-primary">Skills Portfolio</h2>
-          <div className="w-16 h-1 bg-cyan-500 mx-auto mt-4 rounded-full" />
-          <p className="text-secondary text-xs mt-3 uppercase tracking-widest font-mono">
-            Enterprise backend, web frameworks & AI integration tools
+          <h2 className="text-4xl md:text-5xl font-bold font-display text-primary">Technical Skills</h2>
+          <div className="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mt-4 rounded-full" />
+          <p className="text-secondary text-xs mt-4 uppercase tracking-[0.2em] font-mono">
+            Interactive Technology Wall Across 6 Engineering Domains
           </p>
         </motion.div>
 
-        {/* 1. ANIMATED CIRCULAR PROGRESS BARS */}
-        <div className="mb-16">
-          <h3 className="text-base font-bold font-mono uppercase tracking-wider text-secondary text-center mb-8">Core Competency Levels</h3>
-          
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-            {portfolioData.skillProgress.map((skill, i) => {
-              const radius = 40;
-              const circumference = 2 * Math.PI * radius;
-              const strokeDashoffset = circumference - (skill.percentage / 100) * circumference;
-
-              return (
-                <motion.div 
-                  key={i} 
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
-                  whileHover={{ scale: 1.05 }}
-                  className="glass-panel p-5 rounded-2xl border border-[var(--glass-border)] flex flex-col items-center hover:border-cyan-500/40 transition-all duration-300 shadow-md"
-                >
-                  <div className="relative w-24 h-24 flex items-center justify-center">
-                    <svg className="w-full h-full transform -rotate-90">
-                      <circle
-                        cx="48"
-                        cy="48"
-                        r={radius}
-                        className="stroke-[var(--glass-border)] fill-transparent"
-                        strokeWidth="6"
-                      />
-                      <circle
-                        cx="48"
-                        cy="48"
-                        r={radius}
-                        className="stroke-cyan-400 fill-transparent transition-all duration-1000 ease-out"
-                        strokeWidth="6"
-                        strokeDasharray={circumference}
-                        strokeDashoffset={strokeDashoffset}
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                    <div className="absolute font-mono text-base font-bold text-primary">
-                      {skill.percentage}%
-                    </div>
-                  </div>
-
-                  <span className="text-xs font-bold font-display text-primary text-center mt-3">{skill.name}</span>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* 2. CATEGORIZED TECH STACK GRID */}
+        {/* 6 Category Interactive Wall */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {portfolioData.skills.map((cat, idx) => {
-            const Icon = categoryIcons[cat.category] || Cpu;
+          {portfolioData.skills.map((cat: SkillCategory, idx: number) => {
+            const Icon = getCategoryIcon(cat.category);
+
             return (
-              <motion.div 
-                key={idx} 
+              <motion.div
+                key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                whileHover={{ y: -4 }}
-                className="glass-panel p-6 rounded-3xl border border-[var(--glass-border)] hover:border-cyan-500/30 transition-all duration-300 relative group shadow-md"
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                whileHover={{ y: -5 }}
+                className="glass-panel p-8 rounded-3xl border border-[var(--glass-border)] hover:border-cyan-500/40 transition-all shadow-xl flex flex-col justify-between group"
               >
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="bg-cyan-500/10 text-cyan-400 p-2.5 rounded-xl group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all">
-                    <Icon className="h-5 w-5" />
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="p-3 rounded-2xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 group-hover:scale-110 transition-transform">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-xl font-bold font-display text-primary">{cat.category}</h3>
                   </div>
-                  <h4 className="text-base font-bold font-display text-primary">{cat.category}</h4>
-                </div>
 
-                <ul className="space-y-2.5">
-                  {cat.items.map((item, itemIdx) => (
-                    <li key={itemIdx} className="flex items-center gap-2.5 text-xs text-secondary font-mono">
-                      <CheckCircle2 className="h-4 w-4 text-cyan-400 shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                  <div className="flex flex-wrap gap-2">
+                    {cat.items.map((item, i) => (
+                      <motion.span
+                        key={i}
+                        whileHover={{ scale: 1.05 }}
+                        className="px-3.5 py-2 rounded-xl text-xs font-mono bg-[var(--accent-glow)] text-cyan-300 border border-[var(--glass-border)] hover:border-cyan-500/40 hover:bg-cyan-500/10 transition-all cursor-default shadow-sm"
+                      >
+                        {item}
+                      </motion.span>
+                    ))}
+                  </div>
+                </div>
               </motion.div>
             );
           })}
