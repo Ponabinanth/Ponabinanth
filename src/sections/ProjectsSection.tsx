@@ -1,443 +1,248 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import React, { useState } from "react";
 import { portfolioData, Project } from "../data.js";
-import {
-  Github, ExternalLink, Cpu, Layers, ShieldAlert, Sparkles, Code2,
-  CheckCircle2, ArrowRight, Play, Code, HelpCircle, Plus, Minus,
-  RefreshCw, Volume2, ShieldCheck, Zap, Server, Database, Activity
-} from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import { FolderGit2, Github, ExternalLink, Sparkles, Layers, ShieldCheck, ShoppingCart, Users, ChevronRight, X } from "lucide-react";
 
 interface ProjectsSectionProps {
-  onScrollToSection: (id: string) => void;
+  onScrollToSection?: (id: string) => void;
 }
 
 export default function ProjectsSection({ onScrollToSection }: ProjectsSectionProps) {
-  const [expandedArchitecture, setExpandedArchitecture] = useState<string | null>(null);
-  const [runningDemo, setRunningDemo] = useState<string | null>("inventory");
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  // 1. INVENTORY SYSTEM DEMO STATE
-  const [inventoryItems, setInventoryItems] = useState([
-    { id: 1, name: "Enterprise Server Blades", stock: 12, threshold: 5, status: "OK" },
-    { id: 2, name: "DDR5 ECC RAM Modules", stock: 4, threshold: 5, status: "LOW_STOCK" },
-    { id: 3, name: "NVMe SSD Array (2TB)", stock: 18, threshold: 5, status: "OK" }
-  ]);
-  const [inventoryLogs, setInventoryLogs] = useState<string[]>([
-    "[SPRING_BOOT] Transactional Manager initialized.",
-    "[MYSQL] AWS RDS Pool Connected: 20 active connections.",
-    "[ALERT] Item #2 DDR5 ECC RAM Modules fell below threshold (4 < 5)."
-  ]);
-
-  // 2. EDUREACH AI DEMO STATE
-  const [selectedTopic, setSelectedTopic] = useState("Spring Boot Microservices");
-  const [generatedRoadmap, setGeneratedRoadmap] = useState<string[]>([
-    "1. Dependency Injection & Inversion of Control (IoC)",
-    "2. RESTful Controller Annotations & DTO Mappings",
-    "3. Spring Data JPA & Database Connection Pooling",
-    "4. Spring Security JWT Authorization Filters",
-    "5. Dockerization & AWS ECS Cloud Deployment"
-  ]);
-  const [isGeneratingRoadmap, setIsGeneratingRoadmap] = useState(false);
-
-  // 3. SECURECHAIN DEMO STATE
-  const [blocks, setBlocks] = useState([
-    { blockNo: 29401, hash: "0x8f19...c3a1", txCount: 14, tfAnomalyScore: 0.02, status: "SECURE" },
-    { blockNo: 29402, hash: "0x3a4b...e90f", txCount: 22, tfAnomalyScore: 0.04, status: "SECURE" },
-    { blockNo: 29403, hash: "0xd901...88ab", txCount: 18, tfAnomalyScore: 0.01, status: "SECURE" }
-  ]);
-  const [isSimulatingThreat, setIsSimulatingThreat] = useState(false);
-
-  // Inventory Stock Adjustment Handler
-  const handleAdjustStock = (id: number, delta: number) => {
-    setInventoryItems(prev => prev.map(item => {
-      if (item.id === id) {
-        const newStock = Math.max(0, item.stock + delta);
-        const status = newStock <= item.threshold ? "LOW_STOCK" : "OK";
-        
-        const timestamp = new Date().toLocaleTimeString();
-        setInventoryLogs(logs => [
-          `[${timestamp}] [STOCK_UPDATE] ${item.name} quantity modified: ${item.stock} -> ${newStock}.`,
-          ...(newStock <= item.threshold ? [`[${timestamp}] ⚠️ [ALERT] ${item.name} fell below threshold (${newStock} <= ${item.threshold})! Triggering reorder mailer.`] : []),
-          ...logs.slice(0, 4)
-        ]);
-        
-        return { ...item, stock: newStock, status };
-      }
-      return item;
-    }));
-  };
-
-  // Reorder Stock Trigger
-  const handleReorderStock = (id: number) => {
-    handleAdjustStock(id, 15);
-    const timestamp = new Date().toLocaleTimeString();
-    setInventoryLogs(logs => [
-      `[${timestamp}] ⚡ [SPRING_TX] Transactional reorder executed (+15 units). Stock replenished.`,
-      ...logs.slice(0, 4)
-    ]);
-  };
-
-  // EduReach AI Roadmap Generator Handler
-  const handleGenerateRoadmap = (topic: string) => {
-    setSelectedTopic(topic);
-    setIsGeneratingRoadmap(true);
-    setTimeout(() => {
-      if (topic.includes("RAG")) {
-        setGeneratedRoadmap([
-          "1. Document Chunking & Text Embedding Vectorization",
-          "2. Vector Database Indexing (Pinecone / FAISS / Chroma)",
-          "3. Similarity Search & Context Retrieval",
-          "4. Gemini API Context Injection & Prompt Construction",
-          "5. Streaming UI Feedback & Grounded Verification"
-        ]);
-      } else if (topic.includes("Java")) {
-        setGeneratedRoadmap([
-          "1. JVM Memory Layout: Heap vs Stack vs Metaspace",
-          "2. Garbage Collection & Generational GC Algorithms",
-          "3. Multithreading & Java Concurrency Executors",
-          "4. Collections Framework Internal Hash Maps",
-          "5. Design Patterns: Singleton, Factory, Builder, Strategy"
-        ]);
-      } else {
-        setGeneratedRoadmap([
-          "1. Dependency Injection & Inversion of Control (IoC)",
-          "2. RESTful Controller Annotations & DTO Mappings",
-          "3. Spring Data JPA & Database Connection Pooling",
-          "4. Spring Security JWT Authorization Filters",
-          "5. Dockerization & AWS ECS Cloud Deployment"
-        ]);
-      }
-      setIsGeneratingRoadmap(false);
-    }, 600);
-  };
-
-  // SecureChain Threat Packet Simulator
-  const handleSimulateThreat = () => {
-    setIsSimulatingThreat(true);
-    setTimeout(() => {
-      const nextBlockNo = blocks[blocks.length - 1].blockNo + 1;
-      const newBlock = {
-        blockNo: nextBlockNo,
-        hash: `0x${Math.random().toString(16).substring(2, 6)}...${Math.random().toString(16).substring(2, 6)}`,
-        txCount: Math.floor(Math.random() * 50) + 10,
-        tfAnomalyScore: 0.94,
-        status: "THREAT_BLOCKED"
-      };
-      setBlocks(prev => [...prev.slice(1), newBlock]);
-      setIsSimulatingThreat(false);
-    }, 800);
+  const getProjectIcon = (id: string) => {
+    switch (id) {
+      case "edureach": return Sparkles;
+      case "securechain": return ShieldCheck;
+      case "retail-intelligence": return ShoppingCart;
+      case "ai-recruitment": return Users;
+      default: return FolderGit2;
+    }
   };
 
   return (
-    <section id="projects" className="py-20 border-t border-white/5 relative">
+    <section id="projects" className="py-24 relative">
       <div className="max-w-6xl mx-auto px-6">
         
         {/* Section Heading */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-xs font-mono text-cyan-400 font-semibold mb-3">
-            <Sparkles className="h-3.5 w-3.5" />
-            LIVE INTERACTIVE CASE STUDIES
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-xs font-mono text-cyan-400 mb-3">
+            <FolderGit2 className="h-3.5 w-3.5" />
+            Engineering Showcase
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-primary">Full Stack & AI Projects</h2>
-          <div className="w-16 h-1 bg-cyan-500 mx-auto mt-3 rounded-full" />
-          <p className="text-secondary text-xs mt-2 uppercase tracking-widest">Test live interactive sandboxes directly in the portfolio</p>
-        </div>
+          <h2 className="text-4xl md:text-5xl font-bold font-display text-primary">Featured Projects</h2>
+          <div className="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mt-4 rounded-full" />
+          <p className="text-secondary text-xs mt-4 uppercase tracking-[0.2em] font-mono">
+            Production-Grade Applications, AI Ecosystems, & Web3 Security Suites
+          </p>
+        </motion.div>
 
-        {/* Projects List */}
-        <div className="space-y-16">
-          {portfolioData.projects.map((proj, idx) => {
-            const isArchitectureExpanded = expandedArchitecture === proj.id;
-            const isSelectedDemo = runningDemo === proj.id;
+        {/* 4 Large Project Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {portfolioData.projects.map((proj: Project, idx: number) => {
+            const Icon = getProjectIcon(proj.id);
 
             return (
-              <div
+              <motion.div
                 key={proj.id}
-                className="glass-panel p-6 md:p-8 rounded-3xl border border-white/5 relative overflow-hidden flex flex-col lg:flex-row gap-8 hover:border-cyan-500/20 transition-all duration-300"
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.12 }}
+                className="glass-panel rounded-3xl border border-[var(--glass-border)] hover:border-cyan-500/40 transition-all duration-300 shadow-xl flex flex-col justify-between overflow-hidden group"
               >
-                {/* Background ambient light */}
-                <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500/5 rounded-full filter blur-3xl -z-10" />
-
-                {/* Left Column: Project Overview */}
-                <div className="flex-1 space-y-6">
-                  {/* AI Generated Image Banner */}
-                  {proj.imageUrl && (
-                    <div className="relative w-full h-48 md:h-56 rounded-2xl overflow-hidden border border-[var(--glass-border)] bg-[var(--bg-primary)] group shadow-lg">
-                      <img 
-                        src={proj.imageUrl} 
-                        alt={proj.title} 
-                        loading="lazy"
-                        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[var(--glass-bg)] via-transparent to-transparent pointer-events-none" />
-                      <div className="absolute bottom-3 left-3 right-3 flex justify-between items-center bg-[var(--glass-bg)] border border-[var(--glass-border)] px-3 py-1.5 rounded-xl backdrop-blur-md text-[11px] font-mono text-cyan-400 font-semibold shadow-sm">
-                        <span className="flex items-center gap-1.5">
-                          <Sparkles className="h-3.5 w-3.5 text-cyan-400" />
-                          AI System Interface Preview
-                        </span>
-                        <span className="text-[10px] text-secondary font-mono">System Mockup</span>
-                      </div>
+                <div className="p-8 space-y-6">
+                  
+                  {/* Top Bar */}
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="p-3 rounded-2xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 group-hover:scale-110 transition-transform">
+                      <Icon className="h-6 w-6" />
                     </div>
-                  )}
 
+                    <a
+                      href={proj.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2.5 rounded-full bg-[var(--accent-glow)] text-secondary hover:text-cyan-400 border border-[var(--glass-border)] transition-colors cursor-pointer"
+                      title="View GitHub Repository"
+                    >
+                      <Github className="h-4 w-4" />
+                    </a>
+                  </div>
+
+                  {/* Title & Subtitle */}
                   <div>
-                    <span className="text-[10px] text-cyan-400 font-mono tracking-wider font-bold bg-cyan-500/10 px-2.5 py-1 rounded-md border border-cyan-500/20">
-                      FEATURED CASE #{idx + 1}
+                    <h3 className="text-2xl font-bold font-display text-primary">{proj.title}</h3>
+                    <p className="text-xs font-mono text-cyan-400 mt-1 font-semibold">{proj.subtitle}</p>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-sm text-secondary leading-relaxed font-sans">
+                    {proj.description}
+                  </p>
+
+                  {/* Key Features Summary List */}
+                  <div className="space-y-1.5 pt-2">
+                    <span className="text-[11px] font-mono text-cyan-400 uppercase tracking-wider block font-bold">
+                      Key Highlights & Capabilities
                     </span>
-                    <h3 className="text-2xl font-bold font-display text-primary mt-3 flex items-center gap-2">
-                      {proj.title}
-                    </h3>
-                    <p className="text-xs text-secondary font-medium font-sans mt-1.5 leading-relaxed">{proj.description}</p>
-                  </div>
-
-                  {/* Tech stack badges */}
-                  <div className="flex flex-wrap gap-1.5">
-                    {proj.techStack.map((tech) => (
-                      <span key={tech} className="text-[10px] font-mono bg-white/5 text-cyan-300 px-2 py-0.5 rounded-md border border-white/5">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Implementation Checklist */}
-                  <div className="space-y-2">
-                    <h4 className="text-xs font-bold font-display text-primary uppercase tracking-wider">Key Implementations</h4>
-                    <ul className="space-y-1.5">
-                      {proj.features.map((feat, fidx) => (
-                        <li key={fidx} className="flex items-start gap-2 text-xs text-secondary">
-                          <CheckCircle2 className="h-4.5 w-4.5 text-cyan-400 shrink-0 mt-0.5" />
+                    <ul className="space-y-1 text-xs font-sans text-secondary">
+                      {proj.features.slice(0, 3).map((feat, i) => (
+                        <li key={i} className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" />
                           <span>{feat}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  {/* Controls */}
-                  <div className="flex flex-wrap gap-2.5 pt-2">
-                    <button
-                      onClick={() => setRunningDemo(proj.id)}
-                      className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                        isSelectedDemo
-                          ? "bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20"
-                          : "bg-white/5 hover:bg-white/10 text-secondary border border-white/5"
-                      }`}
-                    >
-                      <Play className="h-3.5 w-3.5 fill-current" />
-                      {isSelectedDemo ? "Active Interactive Sandbox" : "Launch Sandbox"}
-                    </button>
-
-                    <button
-                      onClick={() => setExpandedArchitecture(isArchitectureExpanded ? null : proj.id)}
-                      className="flex items-center gap-1.5 bg-white/5 hover:bg-white/10 text-secondary px-4 py-2 rounded-xl text-xs font-semibold border border-white/5 hover:border-white/10 transition-all cursor-pointer"
-                    >
-                      <Play className="h-3.5 w-3.5" />
-                      {isArchitectureExpanded ? "Hide Architecture" : "View Tech Architecture"}
-                    </button>
-
-                    <a
-                      href={proj.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1 bg-white/5 hover:bg-white/10 text-secondary hover:text-white px-4 py-2 rounded-xl text-xs font-semibold border border-white/5 hover:border-white/10 transition-all"
-                    >
-                      <Github className="h-3.5 w-3.5" />
-                      GitHub Repo
-                    </a>
+                  {/* Tech Stack Badges */}
+                  <div className="flex flex-wrap gap-1.5 pt-2">
+                    {proj.techStack.map((tech, i) => (
+                      <span key={i} className="text-[10px] font-mono bg-cyan-500/10 text-cyan-300 px-2.5 py-1 rounded-lg border border-cyan-500/20">
+                        {tech}
+                      </span>
+                    ))}
                   </div>
 
-                  {/* Architecture Accordion */}
-                  <AnimatePresence>
-                    {isArchitectureExpanded && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="bg-cyan-500/5 border border-cyan-500/20 rounded-2xl p-4 overflow-hidden mt-4"
-                      >
-                        <h4 className="text-xs font-bold font-display text-primary uppercase tracking-wider mb-2 flex items-center gap-1">
-                          <Cpu className="h-4 w-4 text-cyan-400" /> Layered System Architecture
-                        </h4>
-                        <p className="text-xs text-secondary leading-relaxed font-sans mb-3">
-                          {proj.architecture}
-                        </p>
-                        <button
-                          onClick={() => onScrollToSection("ai-recruiter-mode")}
-                          className="w-full bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/20 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-all cursor-pointer"
-                        >
-                          Ask AI Assistant about this architecture &gt;&gt;
-                        </button>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
                 </div>
 
-                {/* Right Column: Dynamic Real-Time Sandbox Screen */}
-                <div className="w-full lg:w-[420px] flex flex-col">
-                  
-                  {/* SANDBOX 1: INVENTORY MANAGEMENT SYSTEM */}
-                  {proj.id === "inventory" && (
-                    <div className="bg-[#080d19] border border-cyan-500/30 rounded-2xl p-4 space-y-4 shadow-xl flex-1 flex flex-col justify-between select-none">
-                      <div className="flex justify-between items-center border-b border-white/10 pb-2">
-                        <div className="flex items-center gap-2">
-                          <Server className="h-4 w-4 text-cyan-400" />
-                          <span className="text-xs font-bold font-mono text-primary">SPRING BOOT CONSOLE</span>
-                        </div>
-                        <span className="text-[9px] font-mono text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
-                          🟢 DB ACTIVE
-                        </span>
-                      </div>
+                {/* Card Action Footer */}
+                <div className="p-6 bg-slate-950/40 border-t border-[var(--glass-border)] flex items-center justify-between">
+                  <button
+                    onClick={() => setSelectedProject(proj)}
+                    className="text-xs font-mono text-cyan-400 hover:text-white flex items-center gap-1.5 transition-colors cursor-pointer font-bold"
+                  >
+                    <span>EXPLORE ARCHITECTURE & DETAILS</span>
+                    <ChevronRight className="h-4 w-4" />
+                  </button>
 
-                      {/* Stock Items Counter Controls */}
-                      <div className="space-y-2">
-                        <p className="text-[11px] text-secondary font-mono">Stock Depletion Control Simulator:</p>
-                        {inventoryItems.map((item) => (
-                          <div key={item.id} className="bg-slate-900 border border-white/5 p-2.5 rounded-xl flex items-center justify-between text-xs font-mono">
-                            <div className="min-w-0 flex-1 mr-2">
-                              <span className="text-primary font-semibold block truncate">{item.name}</span>
-                              <span className="text-[10px] text-secondary">Qty: <strong className={item.stock <= item.threshold ? "text-red-400" : "text-cyan-400"}>{item.stock}</strong> (Min: {item.threshold})</span>
-                            </div>
-
-                            <div className="flex items-center gap-1">
-                              <button
-                                onClick={() => handleAdjustStock(item.id, -1)}
-                                className="p-1 bg-white/5 hover:bg-white/10 text-secondary rounded hover:text-white cursor-pointer"
-                                title="Deplete stock by 1"
-                              >
-                                <Minus className="h-3 w-3" />
-                              </button>
-                              <button
-                                onClick={() => handleAdjustStock(item.id, 1)}
-                                className="p-1 bg-white/5 hover:bg-white/10 text-secondary rounded hover:text-white cursor-pointer"
-                                title="Add stock by 1"
-                              >
-                                <Plus className="h-3 w-3" />
-                              </button>
-
-                              {item.stock <= item.threshold && (
-                                <button
-                                  onClick={() => handleReorderStock(item.id)}
-                                  className="ml-1 bg-red-500 text-white text-[9px] px-2 py-1 rounded font-bold hover:bg-red-400 animate-pulse cursor-pointer"
-                                >
-                                  Reorder
-                                </button>
-                              )}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Logs View */}
-                      <div className="bg-slate-950 p-2.5 rounded-xl border border-white/5 font-mono text-[10px] text-cyan-300 max-h-[90px] overflow-y-auto space-y-1">
-                        {inventoryLogs.map((log, lidx) => (
-                          <div key={lidx} className="leading-tight">{log}</div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* SANDBOX 2: EDUREACH AI TUTOR */}
-                  {proj.id === "edureach" && (
-                    <div className="bg-[#080d19] border border-cyan-500/30 rounded-2xl p-4 space-y-4 shadow-xl flex-1 flex flex-col justify-between">
-                      <div className="flex justify-between items-center border-b border-white/10 pb-2">
-                        <div className="flex items-center gap-2">
-                          <Sparkles className="h-4 w-4 text-cyan-400" />
-                          <span className="text-xs font-bold font-mono text-primary">AI ROADMAP & VOICE TUTOR</span>
-                        </div>
-                        <span className="text-[9px] font-mono text-cyan-400 font-bold bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">
-                          GEMINI 3.5 API
-                        </span>
-                      </div>
-
-                      {/* Topic Selection Buttons */}
-                      <div className="space-y-1.5">
-                        <p className="text-[11px] text-secondary font-mono">Select Academic Topic to Synthesize:</p>
-                        <div className="flex flex-wrap gap-1.5">
-                          {[
-                            "Spring Boot Microservices",
-                            "RAG Vector Search",
-                            "Java Core & JVM"
-                          ].map((topic) => (
-                            <button
-                              key={topic}
-                              onClick={() => handleGenerateRoadmap(topic)}
-                              className={`text-[10px] font-mono px-2.5 py-1 rounded-lg border transition-all cursor-pointer ${
-                                selectedTopic === topic
-                                  ? "bg-cyan-500 text-slate-950 font-bold border-cyan-400"
-                                  : "bg-white/5 border-white/10 text-secondary hover:bg-white/10"
-                              }`}
-                            >
-                              {topic}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Synthesized Output */}
-                      <div className="bg-slate-950 p-3 rounded-xl border border-white/5 font-mono text-xs text-cyan-300 max-h-[140px] overflow-y-auto space-y-1.5">
-                        {isGeneratingRoadmap ? (
-                          <div className="flex items-center gap-2 text-secondary py-4 justify-center">
-                            <RefreshCw className="h-4 w-4 animate-spin text-cyan-400" />
-                            <span>Synthesizing learning nodes...</span>
-                          </div>
-                        ) : (
-                          generatedRoadmap.map((step, sidx) => (
-                            <div key={sidx} className="text-secondary leading-snug">
-                              {step}
-                            </div>
-                          ))
-                        )}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* SANDBOX 3: SECURECHAIN BLOCKCHAIN & TF.JS */}
-                  {proj.id === "securechain" && (
-                    <div className="bg-[#080d19] border border-cyan-500/30 rounded-2xl p-4 space-y-4 shadow-xl flex-1 flex flex-col justify-between">
-                      <div className="flex justify-between items-center border-b border-white/10 pb-2">
-                        <div className="flex items-center gap-2">
-                          <Zap className="h-4 w-4 text-cyan-400" />
-                          <span className="text-xs font-bold font-mono text-primary">WEB3 & TENSORFLOW.JS EDGE</span>
-                        </div>
-                        <button
-                          onClick={handleSimulateThreat}
-                          disabled={isSimulatingThreat}
-                          className="text-[9px] font-mono bg-red-500/20 text-red-400 hover:bg-red-500/30 px-2 py-0.5 rounded border border-red-500/30 font-bold transition-all cursor-pointer disabled:opacity-50"
-                        >
-                          {isSimulatingThreat ? "Mining..." : "Simulate Threat Burst"}
-                        </button>
-                      </div>
-
-                      {/* Live Block Cards */}
-                      <div className="space-y-2">
-                        <p className="text-[11px] text-secondary font-mono">Live Cryptographic Block Ledger Stream:</p>
-                        {blocks.map((blk) => (
-                          <div key={blk.blockNo} className="bg-slate-900 border border-white/5 p-2.5 rounded-xl flex items-center justify-between font-mono text-xs">
-                            <div>
-                              <div className="flex items-center gap-2">
-                                <span className="text-primary font-bold">Block #{blk.blockNo}</span>
-                                <span className="text-[10px] text-secondary">{blk.hash}</span>
-                              </div>
-                              <span className="text-[10px] text-secondary block mt-0.5">
-                                Txns: {blk.txCount} | TF Anomaly: <strong className={blk.tfAnomalyScore > 0.5 ? "text-red-400" : "text-emerald-400"}>{blk.tfAnomalyScore}</strong>
-                              </span>
-                            </div>
-
-                            <span className={`text-[9px] font-bold px-2 py-0.5 rounded border ${
-                              blk.status === "SECURE"
-                                ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
-                                : "bg-red-500/20 text-red-400 border-red-500/30 animate-pulse"
-                            }`}>
-                              {blk.status}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
+                  <a
+                    href={proj.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-mono text-secondary hover:text-primary flex items-center gap-1"
+                  >
+                    <span>CODE</span>
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
+
+        {/* Detailed Modal Drawer */}
+        <AnimatePresence>
+          {selectedProject && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+            >
+              <motion.div
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.95, opacity: 0 }}
+                className="bg-slate-900 border border-cyan-500/30 rounded-3xl max-w-3xl w-full p-6 sm:p-8 space-y-6 relative shadow-2xl my-8 max-h-[90vh] overflow-y-auto text-white"
+              >
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  className="absolute top-6 right-6 p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white border border-slate-700 cursor-pointer"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+
+                <div className="space-y-2 pr-8">
+                  <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-widest">
+                    Project Deep Dive
+                  </span>
+                  <h3 className="text-3xl font-bold font-display text-white">{selectedProject.title}</h3>
+                  <p className="text-sm font-mono text-cyan-300">{selectedProject.subtitle}</p>
+                </div>
+
+                <div className="space-y-4 text-sm text-slate-300 font-sans">
+                  <div>
+                    <h4 className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider mb-1">
+                      Problem Statement
+                    </h4>
+                    <p className="bg-slate-950/60 p-4 rounded-2xl border border-slate-800 leading-relaxed">
+                      {selectedProject.problem}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider mb-1">
+                      Solution Architecture
+                    </h4>
+                    <p className="bg-slate-950/60 p-4 rounded-2xl border border-slate-800 leading-relaxed">
+                      {selectedProject.solution}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider mb-1">
+                      System Design & Data Flow
+                    </h4>
+                    <p className="bg-slate-950/60 p-4 rounded-2xl border border-slate-800 font-mono text-xs text-cyan-300 leading-relaxed">
+                      {selectedProject.architecture}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider mb-2">
+                      Complete Feature Set
+                    </h4>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-sans text-slate-300">
+                      {selectedProject.features.map((feat, i) => (
+                        <li key={i} className="flex items-center gap-2 bg-slate-800/50 p-2.5 rounded-xl border border-slate-700/50">
+                          <Sparkles className="h-3.5 w-3.5 text-cyan-400 flex-shrink-0" />
+                          <span>{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider mb-1">
+                      My Core Engineering Contribution
+                    </h4>
+                    <p className="bg-slate-950/60 p-4 rounded-2xl border border-slate-800 leading-relaxed">
+                      {selectedProject.contribution}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Footer Buttons */}
+                <div className="pt-4 border-t border-slate-800 flex items-center justify-between">
+                  <a
+                    href={selectedProject.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-6 py-3 rounded-full bg-cyan-500 text-slate-950 font-bold text-xs hover:bg-cyan-400 transition-colors"
+                  >
+                    <Github className="h-4 w-4" />
+                    <span>View GitHub Repository</span>
+                  </a>
+
+                  <button
+                    onClick={() => setSelectedProject(null)}
+                    className="text-xs font-mono text-slate-400 hover:text-white"
+                  >
+                    Close Window
+                  </button>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
       </div>
     </section>
