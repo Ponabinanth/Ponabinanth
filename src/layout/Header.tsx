@@ -13,13 +13,14 @@ interface HeaderProps {
 
 const navLinks = [
   { label: "Home", id: "home" },
-  { label: "AI", id: "ai-recruiter-mode" },
   { label: "About", id: "about" },
-  { label: "Timeline", id: "timeline" },
-  { label: "Experience", id: "experience" },
+  { label: "Area Of Interest", id: "area-of-interest" },
   { label: "Education", id: "education" },
+  { label: "Academics", id: "academics" },
   { label: "Skills", id: "skills" },
   { label: "Projects", id: "projects" },
+  { label: "Experience", id: "experience" },
+  { label: "Certifications", id: "certifications" },
   { label: "Contact", id: "contact" }
 ];
 
