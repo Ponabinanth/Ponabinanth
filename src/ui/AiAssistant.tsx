@@ -98,6 +98,7 @@ export default function AiAssistant({ onSearchNavigation }: AiAssistantProps) {
       .replace(/###/g, "")
       .replace(/`/g, "")
       .replace(/[-*]\s+/g, "")
+      .replace(/Ponabinanth/gi, "Pon Ah-bih-nanth")
       .slice(0, 350); // limit spoken duration
 
     const utterance = new SpeechSynthesisUtterance(cleanText);
