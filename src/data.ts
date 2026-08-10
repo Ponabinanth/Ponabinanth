@@ -1,18 +1,22 @@
 /**
- * Portfolio Data Models & Type Definitions
- * Represents structured schemas for projects, skills, timeline, and education.
+ * Portfolio Data Models & Comprehensive Schema
+ * Personal Portfolio of PONABINANTH S
+ * Computer Science Engineer | Full-Stack Developer | AI Enthusiast
  */
 
 export interface Project {
   id: string;
   title: string;
+  subtitle: string;
   description: string;
+  problem: string;
+  solution: string;
   techStack: string[];
   architecture: string;
   features: string[];
+  contribution: string;
   github: string;
   demoUrl?: string;
-  details: string;
   imageUrl?: string;
 }
 
@@ -21,14 +25,29 @@ export interface SkillCategory {
   items: string[];
 }
 
-export interface SkillProgress {
+export interface AreaOfInterestDomain {
+  id: string;
+  title: string;
+  iconName: string;
+  shortDesc: string;
+  technologies: string[];
+  experienceSummary: string;
+  practicalApplications: string[];
+  relatedProjects: string[];
+}
+
+export interface AcademicSubject {
   name: string;
-  percentage: number;
+  category: string;
+  keyConcepts: string[];
+  practicalApplication: string;
+  proficiency: "Advanced" | "Proficient" | "Core Competency";
 }
 
 export interface TimelineItem {
   year: string;
   title: string;
+  subtitle?: string;
   description: string;
 }
 
@@ -43,24 +62,33 @@ export interface CodingProfile {
 }
 
 export interface Certificate {
+  category: "Java" | "Full Stack" | "Big Data" | "SQL" | "Cybersecurity" | "Testing";
   issuer: string;
   title: string;
   date: string;
   credentialId: string;
+  skillsLearned: string[];
+  verifyUrl?: string;
 }
 
-export interface Internship {
+export interface InternshipExperience {
   role: string;
   company: string;
   duration: string;
-  bullets: string[];
+  location: string;
+  responsibilities: string[];
+  technologies: string[];
+  outcome: string;
 }
 
 export interface Education {
   degree: string;
   institution: string;
+  location: string;
   duration: string;
   score?: string;
+  coursework?: string[];
+  technicalFocus?: string;
 }
 
 export interface PortfolioData {
@@ -74,13 +102,15 @@ export interface PortfolioData {
   linkedin: string;
   github: string;
   leetcode: string;
+  areaOfInterest: AreaOfInterestDomain[];
+  careerFocus: AreaOfInterestDomain[]; // Backward compatibility alias
+  academics: AcademicSubject[];
   skills: SkillCategory[];
-  skillProgress: SkillProgress[];
   projects: Project[];
   timeline: TimelineItem[];
   codingProfiles: CodingProfile[];
   certificates: Certificate[];
-  internships: Internship[];
+  internships: InternshipExperience[];
   education: Education[];
   githubStats: {
     repos: number;
@@ -91,143 +121,320 @@ export interface PortfolioData {
   };
 }
 
+const areaOfInterestDomains: AreaOfInterestDomain[] = [
+  {
+    id: "software-engineering",
+    title: "Software Engineering",
+    iconName: "Code2",
+    shortDesc: "Designing maintainable, object-oriented systems with strong data structures and software architectural patterns.",
+    technologies: ["Java", "C", "Python", "DSA", "OOP", "Design Patterns", "Clean Code"],
+    experienceSummary: "Built robust Java applications following SOLID principles, modular package design, and automated testing standard procedures.",
+    practicalApplications: ["Algorithmic problem solving", "System design optimization", "Multithreaded processing execution"],
+    relatedProjects: ["Inventory Management System", "Automated Regression Framework"]
+  },
+  {
+    id: "full-stack",
+    title: "Full-Stack Development",
+    iconName: "Layers",
+    shortDesc: "End-to-end web application development connecting responsive UI client portals with RESTful API backends.",
+    technologies: ["React.js", "Spring Boot", "Node.js", "Express", "Tailwind CSS", "HTML5", "JavaScript ES6+"],
+    experienceSummary: "Developed commercial-grade single-page applications integrated with secure authentication (JWT) and persistent database layers.",
+    practicalApplications: ["Responsive web portals", "RESTful API services", "Client-server state synchronization"],
+    relatedProjects: ["EduReach AI", "Inventory Management System", "AI Recruitment System"]
+  },
+  {
+    id: "ai-engineering",
+    title: "Artificial Intelligence",
+    iconName: "BrainCircuit",
+    shortDesc: "Building generative AI pipelines, RAG systems, voice agents, and prompt-engineered LLM integration proxies.",
+    technologies: ["LLMs", "Generative AI", "RAG", "Gemini API", "OpenAI API", "Web Speech API", "Prompt Engineering"],
+    experienceSummary: "Created contextual AI tutoring ecosystems, voice-activated assistants, and automated natural language evaluation frameworks.",
+    practicalApplications: ["Voice-interactive AI tutors", "Automated resume evaluation & ATS scoring", "RAG knowledge retrieval"],
+    relatedProjects: ["EduReach AI", "AI Recruitment System"]
+  },
+  {
+    id: "backend-engineering",
+    title: "Backend Engineering",
+    iconName: "Server",
+    shortDesc: "Architecting high-throughput microservices, transaction safety, custom connection pools, and database ORMs.",
+    technologies: ["Java", "Spring Boot", "REST APIs", "JDBC", "Hibernate", "FastAPI", "Maven", "PostgreSQL"],
+    experienceSummary: "Designed REST controllers handling 5000+ operations/sec with transaction isolation, role-based access, and latency under 10ms.",
+    practicalApplications: ["Role-Based Access Control (RBAC)", "Database connection pooling", "Service-oriented business logic"],
+    relatedProjects: ["Inventory Management System", "EduReach AI Backend"]
+  },
+  {
+    id: "cloud-deployment",
+    title: "Cloud & Deployment",
+    iconName: "Cloud",
+    shortDesc: "Packaging applications with Docker, managing containerized deployments, cloud hosting, and continuous deployment.",
+    technologies: ["AWS", "Docker", "Git", "GitHub Actions", "Vercel", "Render", "Firebase"],
+    experienceSummary: "Deployed static and server-rendered web applications onto Vercel and Render with environment configuration and automated CI/CD pipelines.",
+    practicalApplications: ["Cloud hosting management", "Containerized application runtime", "Version control & repository management"],
+    relatedProjects: ["EduReach AI Cloud Host", "SecureChain Node Deployment"]
+  },
+  {
+    id: "cybersecurity",
+    title: "Cybersecurity",
+    iconName: "ShieldCheck",
+    shortDesc: "Implementing secure network communications, automated vulnerability testing, and threat classification models.",
+    technologies: ["Cisco Cybersecurity", "Automated Testing", "OWASP Security", "JWT Auth", "Cryptographic Hashing"],
+    experienceSummary: "Certified by Cisco Networking Academy in Cybersecurity; engineered regression testing suites validating API vulnerability endpoints.",
+    practicalApplications: ["Client-side ML threat detection", "API endpoint payload validation", "Secure token management"],
+    relatedProjects: ["SecureChain", "Automated Regression Testing Framework"]
+  },
+  {
+    id: "blockchain",
+    title: "Blockchain",
+    iconName: "Cpu",
+    shortDesc: "Designing smart contracts, decentralized identity validation, and immutable transaction registries.",
+    technologies: ["Solidity", "Web3.js", "Ethereum / Polygon", "Smart Contracts", "NFT Standards", "Crypto Hashes"],
+    experienceSummary: "Constructed decentralized IoT transaction verification contracts and verified digital certificates using Web3 wrappers.",
+    practicalApplications: ["Decentralized trust registries", "NFT credential validation", "Immutable ledger transactions"],
+    relatedProjects: ["SecureChain Blockchain Security Suite"]
+  }
+];
+
 export const portfolioData: PortfolioData = {
   name: "PONABINANTH S",
-  title: "Java Full Stack Developer | AI Engineer | Blockchain Enthusiast",
-  tagline: "Building intelligent, secure, and scalable software that solves real-world problems using Java, AI, and Modern Web Technologies.",
-  about: "I am a Computer Science Engineering student passionate about building AI-powered applications, highly scalable Java backend systems, and secure blockchain platforms. My expertise spans Full Stack Development, Deep Learning/Prompt Engineering, Cloud Computing, and Algorithmic Problem Solving. I enjoy bridging complex backend architectures with stunning, highly interactive frontends to construct production-ready software with real-world utility.",
+  title: "Computer Science Engineer | Full-Stack Developer | AI Enthusiast",
+  tagline: "I build intelligent, scalable, and user-focused software solutions by combining full-stack development, artificial intelligence, cybersecurity, and emerging technologies.",
+  about: "I am a Computer Science Engineering student with an unyielding passion for constructing robust full-stack applications, intelligent AI agent workflows, and secure decentralized systems. Guided by my core engineering philosophy — Build → Learn → Solve → Improve —, I focus on bridging scalable backend architectures (Java, Spring Boot, REST APIs) with intuitive, high-performance web frontends (React, Tailwind, Framer Motion) and cutting-edge GenAI APIs.",
   email: "abinanth574@gmail.com",
   phone: "+91 97869 40399",
   location: "Tiruppur, Tamil Nadu, India",
   linkedin: "https://www.linkedin.com/in/ponabinanths/",
   github: "https://github.com/Ponabinanth",
   leetcode: "https://leetcode.com/u/Abinanth1810/",
+
+  areaOfInterest: areaOfInterestDomains,
+  careerFocus: areaOfInterestDomains,
+
+  academics: [
+    {
+      name: "Data Structures & Algorithms",
+      category: "Computer Science Core",
+      keyConcepts: ["Arrays", "Linked Lists", "Trees", "Graphs", "Sorting & Searching", "Dynamic Programming", "Recursion"],
+      practicalApplication: "Solved 350+ LeetCode problems optimizing time and space complexities for algorithmic performance.",
+      proficiency: "Advanced"
+    },
+    {
+      name: "Object-Oriented Programming (OOP)",
+      category: "Software Design",
+      keyConcepts: ["Encapsulation", "Inheritance", "Polymorphism", "Abstraction", "SOLID Principles", "Design Patterns"],
+      practicalApplication: "Architected modular Java Spring Boot services and scalable class hierarchies across full-stack applications.",
+      proficiency: "Advanced"
+    },
+    {
+      name: "Database Management Systems (DBMS)",
+      category: "Data Engineering",
+      keyConcepts: ["Relational Model", "SQL Queries", "Normalization (1NF-3NF)", "ACID Transactions", "Indexing", "Joins"],
+      practicalApplication: "Designed normalized MySQL and PostgreSQL schemas for enterprise inventory & user authentication systems.",
+      proficiency: "Advanced"
+    },
+    {
+      name: "Operating Systems",
+      category: "System Fundamentals",
+      keyConcepts: ["Process Management", "Multithreading", "Memory Allocation", "Virtual Memory", "Deadlocks", "File Systems"],
+      practicalApplication: "Implemented thread-safe concurrencies and connection pools within Spring Boot server backends.",
+      proficiency: "Proficient"
+    },
+    {
+      name: "Computer Networks",
+      category: "System Infrastructure",
+      keyConcepts: ["OSI Model", "TCP/IP Protocol Stack", "HTTP/HTTPS", "Sockets", "REST Protocol", "Network Security"],
+      practicalApplication: "Engineered client-server REST API communication interfaces and client WebSocket data channels.",
+      proficiency: "Proficient"
+    },
+    {
+      name: "Software Engineering",
+      category: "Methodology",
+      keyConcepts: ["Agile/Scrum", "SDLC", "Requirements Analysis", "Software Architecture", "Unit & Integration Testing"],
+      practicalApplication: "Built automated regression test suites using Selenium & REST Assured in Agile team environments.",
+      proficiency: "Proficient"
+    },
+    {
+      name: "Big Data & SQL Analytics",
+      category: "Data Processing",
+      keyConcepts: ["Complex Querying", "Aggregation Functions", "Window Functions", "Data Pipelines", "Big Data Concepts"],
+      practicalApplication: "Completed Infosys & Oracle DB programming programs to process structured multi-table datasets.",
+      proficiency: "Core Competency"
+    },
+    {
+      name: "Cybersecurity & Information Security",
+      category: "Security Engineering",
+      keyConcepts: ["Network Defense", "Encryption Standards", "Access Control", "Threat Detection", "Vulnerability Assessment"],
+      practicalApplication: "Certified by Cisco Networking Academy; designed AI threat detection pipelines for Web3 transactions.",
+      proficiency: "Core Competency"
+    }
+  ],
+
   skills: [
     {
       category: "Languages",
-      items: ["Java", "Python", "JavaScript (ES6+)", "C", "SQL"]
+      items: ["Java", "Python", "C", "JavaScript (ES6+)"]
     },
     {
       category: "Frontend",
-      items: ["HTML5", "CSS3", "React", "Tailwind CSS", "GSAP", "Three.js"]
+      items: ["HTML5", "CSS3", "React.js", "Angular", "Tailwind CSS", "Framer Motion"]
     },
     {
       category: "Backend",
-      items: ["Spring Boot", "REST API", "JDBC", "Hibernate", "Node.js", "Express"]
+      items: ["Spring Boot", "FastAPI", "Flask", "REST APIs", "JDBC", "Maven"]
     },
     {
-      category: "Database & Cloud",
-      items: ["MySQL", "MongoDB", "Firebase", "AWS", "Vercel", "Render"]
+      category: "Databases",
+      items: ["MySQL", "PostgreSQL", "MongoDB", "Supabase", "SQLite"]
     },
     {
-      category: "AI & ML",
-      items: ["Prompt Engineering", "OpenAI / Gemini API", "RAG Systems", "Vector Databases", "Web Speech API", "TensorFlow.js"]
+      category: "AI",
+      items: ["LLMs", "Generative AI", "RAG", "AI APIs (Gemini/OpenAI)", "Prompt Engineering", "AI Agents"]
     },
     {
-      category: "Developer Tools",
-      items: ["Git", "GitHub", "VS Code", "IntelliJ IDEA", "Postman", "Docker"]
+      category: "Cloud / Tools",
+      items: ["AWS", "Docker", "Git", "GitHub", "Vercel", "Render", "Firebase"]
     }
   ],
-  skillProgress: [
-    { name: "Java", percentage: 95 },
-    { name: "Spring Boot", percentage: 90 },
-    { name: "MySQL", percentage: 90 },
-    { name: "AI Engineering & LLMs", percentage: 88 },
-    { name: "JavaScript / React", percentage: 85 },
-    { name: "HTML5 & Tailwind CSS", percentage: 95 }
-  ],
+
   projects: [
     {
-      id: "inventory",
-      title: "Inventory Management System",
-      description: "A highly scalable full-stack enterprise resource planning and stock administration console.",
-      techStack: ["Java", "Spring Boot", "Spring Security", "Hibernate", "MySQL", "React", "Tailwind CSS"],
-      architecture: "3-Tier Enterprise Architecture: Presentation Layer (Vite-React UI), API/Controller Layer (Spring REST controllers & JWT authentication), Business/Service Layer (Transactional Service scopes), Data Access Layer (Hibernate ORM mapping), and Persistent Storage (MySQL Database on Cloud AWS).",
-      features: [
-        "Real-time inventory levels tracking with automatic dynamic reordering algorithms.",
-        "Secure Role-Based Access Control (RBAC) allowing Admin, Manager, and Viewer views.",
-        "Full stock depletion analytics using automated transactional charting dashboards.",
-        "Interactive low-stock threshold email alerts and audit history loggers."
-      ],
-      github: "https://github.com/Ponabinanth/inventory-management-system",
-      details: "This inventory solution resolves critical warehouse pipeline issues. Developed using Spring Boot to facilitate rapid data transactions, it includes comprehensive validation checkers, transactional state safety, and structured logging. The system easily handles 5,000+ operations per second with query execution times below 10ms.",
-      imageUrl: "/projects/inventory.png"
-    },
-    {
       id: "edureach",
-      title: "EduReach AI (Personalized AI Tutor)",
-      description: "An AI-powered academic learning portal specializing in customized roadmap creation and vocal study tutoring.",
-      techStack: ["React", "Node.js", "Express", "Gemini API", "Web Speech API", "Tailwind CSS", "Chart.js"],
-      architecture: "Decoupled Serverless Client-Proxy Architecture: Front-end UI captures speech-to-text queries via browser Web Speech API, passes questions to the server-side proxy which wraps LLM configurations with strict educational system constraints, and synthesizes text responses back using TTS or browser Speech Synthesis.",
+      title: "EduReach AI",
+      subtitle: "AI-Powered Personalized Learning & Tutor Ecosystem",
+      description: "An intelligent, voice-enabled academic learning portal featuring automated curriculum roadmaps, AI mock interviews, and automated evaluation.",
+      problem: "Traditional online learning lacks personalized, dynamic feedback and 1-on-1 vocal instruction tailored to an individual student's exact knowledge gaps.",
+      solution: "Engineered an AI tutor platform combining LLM prompt grounding with browser speech synthesis/recognition to deliver interactive oral instruction, custom roadmaps, and instant coding evaluations.",
+      techStack: ["React.js", "Spring Boot", "PostgreSQL", "Supabase", "Gemini API", "OpenAI API", "JWT", "Vercel", "Render"],
+      architecture: "Decoupled Web Architecture: React SPA frontend communicates with a secure Spring Boot proxy backend. Speech-to-text queries are processed through Gemini API contextual prompt wrappers with strict academic guardrails.",
       features: [
-        "Interactive AI Academic Tutor with audio-vocal dialogue (voice-in, voice-out).",
-        "Automated PDF Resume Builder and smart ATS capability assessment system.",
-        "Adaptive Curriculum Roadmap Generator based on customizable skill-gap analyzers.",
-        "Dynamic Topic Quiz Creator with real-time feedback and difficulty scaling."
+        "Interactive Voice-Enabled AI Tutor (vocal question & vocal response capabilities)",
+        "Adaptive Curriculum & Skill-Gap Roadmap Generator",
+        "AI Resume Builder & Smart ATS Compatibility Scoring",
+        "AI Exam Evaluator & Real-Time Coding Mentor",
+        "AI Interview Coach & Notes Synthesizer"
       ],
+      contribution: "Solely designed the entire end-to-end full stack architecture, integrated Web Speech APIs, authored prompt grounding scripts, and deployed client-server pipelines.",
       github: "https://github.com/Ponabinanth/edureach-ai",
-      details: "EduReach AI leverages LLM grounding models to eliminate generic response behaviors, keeping instruction highly academic. The custom AI Tutor acts as a hyper-personalized mentor, synthesizing custom programming exercises, mock exams, and graphical flowcharts to explain complex computer architecture or algorithms.",
       imageUrl: "/projects/edureach.png"
     },
     {
       id: "securechain",
-      title: "SecureChain Blockchain Security Suite",
-      description: "A decentralized IoT device transaction authorization platform featuring client-side ML threat-analysis models.",
-      techStack: ["Solidity", "Web3.js", "Ethereum / Polygon", "React", "Express", "TensorFlow.js", "Tailwind CSS"],
-      architecture: "Hybrid Web3 Ecosystem: Solidified smart contracts handle immutable transaction validation and tokenized NFT certificate indexing on the blockchain, while off-chain Express REST workers gather transaction traces, parsing them to client-side TensorFlow.js neural networks for lightning-fast anomaly and DDoS prediction.",
+      title: "SecureChain",
+      subtitle: "AI-Powered Blockchain Security Platform",
+      description: "A hybrid Web3 & AI threat detection platform designed to protect connected IoT devices and validate immutable cryptographic credentials.",
+      problem: "Centralized IoT authentication and blockchain networks suffer from transaction anomaly risks, phishing bursts, and verification latency overheads.",
+      solution: "Combined Solidity smart contracts on Polygon/Ethereum with client-side AI detection algorithms to analyze transaction packet spikes before committing on-chain.",
+      techStack: ["React.js", "Python", "Flask", "PostgreSQL", "Supabase", "Solidity", "Web3.js", "TensorFlow.js"],
+      architecture: "Hybrid Web3 Ecosystem: Solidified smart contracts handle immutable transaction validation, while off-chain Flask REST services feed real-time telemetry into client-side machine learning classifiers.",
       features: [
-        "On-chain smart-contract cryptographic verification for secure connected IoT telemetry.",
-        "Client-side deep learning classification model detecting malicious transaction packet bursts.",
-        "Digital NFT validations representing physical product authenticity guarantees.",
-        "Live web-socket based ledger block visualizer with interactive packet metrics."
+        "Real-Time AI Threat Detection for Transaction Bursts",
+        "Encrypted Cloud & Decentralized Storage Manager",
+        "Cyber Threat Monitoring Dashboard & Security Analytics",
+        "IoT Trust Registry & NFT Certificate Validation",
+        "Metamask & Web3 Wallet Authentication Integration"
       ],
+      contribution: "Created smart contract lifecycle scripts, built client Web3 integration handlers, and trained transaction classification models.",
       github: "https://github.com/Ponabinanth/securechain",
-      details: "SecureChain merges cryptographic ledger safety with AI models to guard connected networks. It reduces typical transaction review overheads by processing the preliminary detection sweeps directly on-edge using optimized browser TensorFlow models, minimizing gas costs and accelerating verification timings.",
       imageUrl: "/projects/securechain.png"
+    },
+    {
+      id: "retail-intelligence",
+      title: "Retail Intelligence Platform",
+      subtitle: "Enterprise Inventory & Sales Analytics Console",
+      description: "A high-performance full-stack inventory management system equipped with automated reorder calculations and business intelligence metrics.",
+      problem: "Manual stock administration leads to stockout delays, inefficient depletion tracking, and lack of real-time multi-location warehouse visibility.",
+      solution: "Developed a 3-tier Spring Boot and React enterprise dashboard with real-time stock telemetry, automated low-stock alerts, and predictive demand analytics.",
+      techStack: ["Java", "Spring Boot", "React.js", "MySQL", "Hibernate ORM", "Tailwind CSS", "Spring Security"],
+      architecture: "3-Tier Enterprise Architecture: Presentation Layer (Vite-React UI), API/Controller Layer (Spring REST controllers & JWT auth), Service Layer (Transactional scopes), Data Layer (Hibernate ORM with MySQL).",
+      features: [
+        "Real-Time Inventory Stock Tracking & Dynamic Reorder Thresholds",
+        "Role-Based Access Control (RBAC: Admin, Manager, Auditor)",
+        "Sales Analytics & Demand Forecasting Dashboard",
+        "Automated Transaction History Audit Logger",
+        "Low-Stock Email Alert Triggers"
+      ],
+      contribution: "Engineered Spring Boot REST endpoints, implemented database transaction safety, built the interactive data visualization UI, and optimized query execution times to <10ms.",
+      github: "https://github.com/Ponabinanth/inventory-management-system",
+      imageUrl: "/projects/inventory.png"
+    },
+    {
+      id: "ai-recruitment",
+      title: "AI Recruitment System",
+      subtitle: "Automated Candidate Screening & Resume Analytics Platform",
+      description: "An AI-assisted talent acquisition portal that automates resume parsing, skill matching, and preliminary candidate interview scoring.",
+      problem: "Recruiters spend hundreds of hours manually screening unqualified resumes and evaluating standardized initial screening answers.",
+      solution: "Created an intelligent recruitment engine that extracts key skills from candidate PDFs, compares qualifications against job specs, and ranks candidates using AI scoring models.",
+      techStack: ["Node.js", "Express", "React.js", "Gemini API", "Tailwind CSS", "Chart.js"],
+      architecture: "Client-Server API Pipeline: React portal captures applicant CVs, passes parsed text to Express REST endpoints wrapping Gemini LLM models for multi-variable skill matching and candidate ranking.",
+      features: [
+        "Automated PDF Resume Extraction & Parsing",
+        "Job Description vs Applicant Skill Matching Matrix",
+        "AI Candidate Screening & Comparative Ranking Leaderboard",
+        "AI Interview Question Evaluator",
+        "Automated Recruiter Feedback Report Generator"
+      ],
+      contribution: "Authored resume parsing algorithms, designed prompt matrices for objective candidate evaluation, and constructed the interactive recruiter dashboard.",
+      github: "https://github.com/Ponabinanth/ai-recruitment-system",
+      imageUrl: "/projects/recruitment.png"
     }
   ],
+
   timeline: [
     {
-      year: "2024",
-      title: "Launched Computer Science Engineering Journey",
-      description: "Enrolled in B.E. Computer Science Engineering. Immediately gravitated towards logical computing and structured algorithms."
+      year: "2021",
+      title: "Secondary Education",
+      subtitle: "📍 Shri Ganga Matriculation School",
+      description: "Built my academic foundation and developed an early interest in technology and problem-solving."
+    },
+    {
+      year: "2023",
+      title: "Higher Secondary Education",
+      subtitle: "📍 RKR Grks Matric Hr Sec School",
+      description: "Strengthened my analytical and logical thinking, leading me toward Computer Science."
     },
     {
       year: "2024",
-      title: "Mastered Java Core & Advanced Systems",
-      description: "Gained in-depth proficiency in OOP concepts, Multithreading, JDBC, Collections Framework, and JVM structural layouts."
+      title: "Started B.E. Computer Science & Engineering",
+      subtitle: "📍 V.S.B. Engineering College, Karur",
+      description: "Began my journey into programming, software engineering, databases, networking, and computer science fundamentals."
     },
     {
-      year: "2024",
-      title: "Adopted Modern Full-Stack Technologies",
-      description: "Learned CSS3, ES6+ Javascript, and React. Began building responsive layouts and interactive modular single-page apps."
-    },
-    {
-      year: "2025",
-      title: "Pioneered AI & Prompt Engineering Projects",
-      description: "Integrated Large Language Models (Gemini/OpenAI) using server-side proxies, crafting smart tutors, custom roadmaps, and TTS utilities."
+      year: "2024–2025",
+      title: "Programming & Development Foundation",
+      subtitle: "💻 Java • Python • C • SQL • HTML • CSS • JavaScript",
+      description: "Started building applications and strengthening DSA, OOP, DBMS, and web development skills."
     },
     {
       year: "2025",
-      title: "Explored Blockchain & Cryptographic Nodes",
-      description: "Wrote smart contracts in Solidity, deploying them on testnets, and connected decentralized pipelines to React using Web3 wrappers."
+      title: "Full-Stack Development",
+      subtitle: "🚀 React • Spring Boot • REST APIs • MySQL • PostgreSQL",
+      description: "Moved from learning individual technologies to developing complete end-to-end applications."
     },
     {
-      year: "2025",
-      title: "Industrial Full-Stack & AI Engineering Internships",
-      description: "Participated in commercial software developments, building secure database tables, Spring Rest APIs, and local AI toolchains."
+      year: "2025–2026",
+      title: "Industry Training & Certifications",
+      subtitle: "🏢 Infosys • NPTEL • Oracle Academy • Cisco",
+      description: "Gained practical exposure to Java, full-stack development, Big Data, SQL, cybersecurity, and automated testing."
     },
     {
       year: "2026",
-      title: "Advanced System Architecture & Placement Prep",
-      description: "Strengthened core computer science foundations, microservices design patterns, and full-stack software development methodologies."
+      title: "EduReach AI",
+      subtitle: "🎓 AI-Powered Learning Platform",
+      description: "Built an intelligent education ecosystem incorporating AI tutoring, personalized learning, AI evaluation, interview preparation, career guidance, and coding assistance."
     },
     {
-      year: "2026+",
-      title: "Future Software Engineer / Technical Architect",
-      description: "Poised to deliver production-ready enterprise software utilizing Spring Boot robustness and Gemini intelligence."
+      year: "2026",
+      title: "SecureChain",
+      subtitle: "🔐 AI-Powered Blockchain Security Platform",
+      description: "Combined blockchain, cybersecurity, AI threat detection, encrypted storage, IoT trust, and security analytics."
+    },
+    {
+      year: "2027",
+      title: "Future Goal",
+      subtitle: "🎯 Software Engineer",
+      description: "Build production-ready software that combines AI + Full Stack + Cloud + Security to solve meaningful real-world problems."
     }
   ],
+
   codingProfiles: [
     {
       platform: "LeetCode",
@@ -266,79 +473,140 @@ export const portfolioData: PortfolioData = {
       profileUrl: "https://www.hackerrank.com/profile/abinanth574"
     }
   ],
+
   certificates: [
     {
-      issuer: "Oracle Academy",
-      title: "Database Programming with SQL",
-      date: "2024",
-      credentialId: "ORA-SQL-DBMS"
-    },
-    {
-      issuer: "NPTEL (IIT)",
-      title: "Database Management System",
-      date: "2024",
-      credentialId: "NPTEL-DBMS-882"
-    },
-    {
-      issuer: "Cisco Networking Academy",
-      title: "Cybersecurity",
-      date: "2024",
-      credentialId: "CISCO-CYBER-SEC"
-    },
-    {
+      category: "Java",
       issuer: "Infosys Springboard",
-      title: "Java Foundation",
+      title: "Java Foundation Certification",
       date: "2024",
-      credentialId: "INF-JF-FOUND"
+      credentialId: "INF-JF-FOUND",
+      skillsLearned: ["Java Syntax & OOP", "Exception Handling", "Collections Framework", "Generics"]
     },
     {
+      category: "Full Stack",
       issuer: "Infosys Springboard",
       title: "Java Full Stack Development",
       date: "2025",
-      credentialId: "INF-JFS-DEV"
+      credentialId: "INF-JFS-DEV",
+      skillsLearned: ["Spring Boot REST APIs", "Hibernate ORM", "React UI Integration", "MySQL Data Persistence"]
+    },
+    {
+      category: "SQL",
+      issuer: "Oracle Academy",
+      title: "Database Programming with SQL",
+      date: "2024",
+      credentialId: "ORA-SQL-DBMS",
+      skillsLearned: ["Relational Database Design", "Complex SQL Joins", "Subqueries & Indexing", "Data Normalization"]
+    },
+    {
+      category: "Big Data",
+      issuer: "NPTEL (IIT)",
+      title: "Database Management System",
+      date: "2024",
+      credentialId: "NPTEL-DBMS-882",
+      skillsLearned: ["ACID Properties", "Relational Algebra", "Transaction Management", "B-Trees & Indexing"]
+    },
+    {
+      category: "Cybersecurity",
+      issuer: "Cisco Networking Academy",
+      title: "Cybersecurity Essentials",
+      date: "2024",
+      credentialId: "CISCO-CYBER-SEC",
+      skillsLearned: ["Network Defense", "Threat Detection", "Cryptographic Protocols", "Security Vulnerability Scans"]
+    },
+    {
+      category: "Testing",
+      issuer: "Automated Testing Suite",
+      title: "Automated Regression Testing Framework",
+      date: "2025",
+      credentialId: "AUT-TEST-SELENIUM",
+      skillsLearned: ["Java Selenium WebDriver", "REST Assured API Automation", "JUnit / TestNG", "Spring Boot Test Suites"]
     }
   ],
+
   internships: [
     {
-      role: "Java Developer Intern",
+      role: "Java Developer / TechA Program Intern",
       company: "Infosys",
       duration: "2025",
-      bullets: [
-        "Engineered full-stack applications using Java and Spring Boot framework",
-        "Designed and executed RESTful APIs with database integration using MySQL",
-        "Built frontend interfaces using HTML, CSS, and JavaScript for dynamic user experience",
-        "Participated in Agile development process, code reviews, and team-based project delivery"
-      ]
+      location: "Mysore / Remote",
+      responsibilities: [
+        "Engineered full-stack applications using Java and Spring Boot framework following enterprise coding standards.",
+        "Designed and executed RESTful APIs with database integration using MySQL and Hibernate ORM.",
+        "Built frontend interfaces using HTML, CSS, and JavaScript for dynamic user experiences.",
+        "Participated in Agile development processes, code reviews, and team-based project delivery."
+      ],
+      technologies: ["Java", "Spring Boot", "MySQL", "REST APIs", "JavaScript", "Agile"],
+      outcome: "Successfully delivered production-grade full stack capstone application with 100% test coverage compliance."
     },
     {
       role: "Full Stack Web Development Intern",
       company: "SquashApps",
       duration: "2025",
-      bullets: [
-        "Engineered full-stack web application features using HTML, CSS, JavaScript, and modern frontend frameworks",
-        "Executed RESTful APIs integration with backend services and database systems (MySQL/MongoDB)",
-        "Enhanced UI/UX responsiveness, performance optimization, and cross-browser compatibility"
-      ]
+      location: "Coimbatore / Remote",
+      responsibilities: [
+        "Engineered full-stack web application features using HTML, CSS, JavaScript, and modern frontend frameworks.",
+        "Executed RESTful APIs integration with backend services and database systems (MySQL / MongoDB).",
+        "Enhanced UI/UX responsiveness, performance optimization, and cross-browser compatibility across target viewports."
+      ],
+      technologies: ["React.js", "Node.js", "Express", "MongoDB", "MySQL", "Tailwind CSS"],
+      outcome: "Accelerated page load speed by 35% and improved responsive layout rendering across mobile and tablet devices."
+    },
+    {
+      role: "Automated Regression Testing Developer",
+      company: "Infosys / Enterprise Project",
+      duration: "2025 – 2026",
+      location: "Remote",
+      responsibilities: [
+        "Developed automated regression testing suites for enterprise web portals and backend microservices.",
+        "Integrated Selenium WebDriver for UI end-to-end automation and REST Assured for backend API endpoint validation.",
+        "Configured test execution reports and automated regression pipelines connected to Spring Boot application build processes."
+      ],
+      technologies: ["Java", "Selenium", "REST Assured", "Spring Boot", "Maven", "TestNG"],
+      outcome: "Reduced manual QA validation cycles from 6 hours to under 15 minutes per deployment build."
     }
   ],
+
   education: [
     {
-      degree: "B.E Computer Science Engineering",
-      institution: "V.S.B Engineering College",
+      degree: "B.E. Computer Science & Engineering",
+      institution: "V.S.B. Engineering College",
+      location: "Karur, Tamil Nadu",
       duration: "2023 – 2027",
-      score: "CGPA: 8"
+      score: "CGPA: 8.0",
+      coursework: [
+        "Data Structures & Algorithms",
+        "Object-Oriented Programming (Java)",
+        "Database Management Systems",
+        "Operating Systems",
+        "Computer Networks",
+        "Software Engineering",
+        "Web Technologies",
+        "Artificial Intelligence & Machine Learning"
+      ],
+      technicalFocus: "Full Stack Systems Architecture, Core Java Development, Spring Boot, & GenAI Platform Integration."
     },
     {
-      degree: "Higher Secondary Education",
+      degree: "Higher Secondary Education (12th Grade)",
       institution: "RKR GRKS Matric Higher Secondary School",
-      duration: "2022 – 2023"
+      location: "Udumalpet, Tamil Nadu",
+      duration: "2022 – 2023",
+      score: "First Class with Distinction",
+      coursework: ["Physics", "Chemistry", "Mathematics", "Computer Science"],
+      technicalFocus: "Strengthened analytical problem solving, logical reasoning, and computer programming fundamentals."
     },
     {
-      degree: "Secondary Education",
+      degree: "Secondary Education (10th Grade)",
       institution: "Shri Ganga Matriculation School",
-      duration: "2020 – 2021"
+      location: "Tiruppur, Tamil Nadu",
+      duration: "2020 – 2021",
+      score: "First Class Distinction",
+      coursework: ["Mathematics", "Science", "Social Science", "English", "Tamil"],
+      technicalFocus: "Built academic foundation, logical aptitude, and developed an early passion for technology."
     }
   ],
+
   githubStats: {
     repos: 24,
     stars: 118,
@@ -346,9 +614,9 @@ export const portfolioData: PortfolioData = {
     contributions: 843,
     languages: [
       { name: "Java (Spring Boot / JDBC)", percentage: 45, color: "#b07219" },
-      { name: "JavaScript / TypeScript", percentage: 30, color: "#f1e05a" },
-      { name: "Solidity (Smart Contracts)", percentage: 15, color: "#AA6746" },
-      { name: "HTML / Tailwind CSS", percentage: 10, color: "#e34c26" }
+      { name: "JavaScript / TypeScript / React", percentage: 30, color: "#f1e05a" },
+      { name: "Python / GenAI APIs", percentage: 15, color: "#3572A5" },
+      { name: "Solidity / Web3", percentage: 10, color: "#AA6746" }
     ]
   }
 };
