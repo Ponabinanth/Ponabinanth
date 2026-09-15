@@ -341,46 +341,6 @@ Role: Full Stack Web Development Intern &nbsp;|&nbsp; Duration: 2025
 
 ---
 
-## 🧩 Fun Facts
-
-```
-🔁 Learn → Build → Break → Debug → Improve → Repeat
-☕ Runs on coffee and console.log()
-🌙 Most productive after midnight commits
-📚 Always got one more tab open on Stack Overflow
-
----
-
-## 🎯 My Development Journey
-
-<div align="center">
-
-**Learn → Build → Break → Debug → Improve → Repeat** 🔁
-
-</div>
-
----
-
-## 🤝 Let's Connect
-
-<div align="center">
-
-📧 abinanth574@gmail.com &nbsp;•&nbsp; 📱 +91 9786940399
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-ponabinanth--s-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ponabinanth-s-236605382)
-[![GitHub](https://img.shields.io/badge/GitHub-Ponabinanth-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Ponabinanth)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit_Site-000000?style=flat-square&logoColor=white)](https://ponabinanth-iczw.vercel.app/)
-[![LeetCode](https://img.shields.io/badge/LeetCode-Abinanth1810-FFA116?style=flat-square&logo=leetcode&logoColor=black)](https://leetcode.com/u/Abinanth1810/)
-[![Gmail](https://img.shields.io/badge/Email-abinanth574%40gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:abinanth574@gmail.com)
-
-### ⚡ Quick Actions
-
-[![Book a Meeting](https://img.shields.io/badge/📅_Book_a_Meeting-4285F4?style=for-the-badge&logoColor=white)](#add-your-calendly-link)
-[![Schedule Interview](https://img.shields.io/badge/🗓️_Schedule_Interview-34A853?style=for-the-badge&logoColor=white)](#add-your-calendly-link)
-[![Email Me](https://img.shields.io/badge/✉️_Email_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:abinanth574@gmail.com?subject=Let's%20Connect)
-[![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ponabinanth-s-236605382)
-[![GitHub](https://img.shields.io/badge/🐙_GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ponabinanth)
-[![Download Resume](https://img.shields.io/badge/📄_Download_Resume-FF6B6B?style=for-the-badge&logoColor=white)](#add-link-to-hosted-resume-pdf)
 
 ⭐ **Thanks for visiting my profile! Feel free to explore my repositories** 🚀
 
