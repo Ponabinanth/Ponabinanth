@@ -348,32 +348,6 @@ Role: Full Stack Web Development Intern &nbsp;|&nbsp; Duration: 2025
 ☕ Runs on coffee and console.log()
 🌙 Most productive after midnight commits
 📚 Always got one more tab open on Stack Overflow
-```
-
----
-
-## 📊 GitHub Analytics
-
-<div align="center">
-
-<img height="160" src="https://github-readme-stats.vercel.app/api?username=Ponabinanth&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&bg_color=0D1117&title_color=FFD700&icon_color=00F7FF" />
-<img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ponabinanth&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=FFD700" />
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=Ponabinanth&theme=tokyonight&hide_border=true&background=0D1117&ring=FFD700&fire=00F7FF" />
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Ponabinanth&theme=tokyo-night&hide_border=true&bg_color=0D1117&color=FFD700&line=00F7FF&point=ffffff" width="95%"/>
-
-<img src="https://github-profile-trophy.vercel.app/?username=Ponabinanth&theme=tokyonight&no-frame=true&row=1&column=7&margin-w=8" />
-
-</div>
-
-## 📈 Coding Profile
-
-<div align="center">
-
-<img src="https://leetcode-stats-card.vercel.app/?username=Abinanth1810&theme=dark" />
-
-</div>
 
 ---
 
