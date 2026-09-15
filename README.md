@@ -140,15 +140,6 @@ Focus     : AI • Full Stack • Cloud • Backend
 <tr>
 <td align="center" width="50%">
 
-### 🌐 Path One
-**The Portfolio**
-
-*See the finished experience — live projects, case studies, and design in motion.*
-
-[![Enter Portfolio](https://img.shields.io/badge/ENTER_PORTFOLIO-0D1117?style=for-the-badge&logoColor=FFD700&color=0D1117&labelColor=FFD700)](https://ponabinanth-iczw.vercel.app/)
-
-</td>
-<td align="center" width="50%">
 
 ### 🐙 Path Two
 **The Code**
@@ -296,82 +287,6 @@ Role: Full Stack Web Development Intern &nbsp;|&nbsp; Duration: 2025
 | English | Professional |
 
 ---
-
-## 🚀 Projects
-
-<div align="center">
-
-### 🎓 [EduReach — AI Learning Platform](https://github.com/Ponabinanth/Edu-Reach---learning-platform)
-<img src="./assets/edureach-homepage.png" width="85%"/>
-
-AI-powered adaptive learning platform — a 25-module system with JWT-based role authentication (Student/Faculty/Admin), gamified progress tracking, and AI-driven tutoring, quizzes, and assignment feedback via a shared **Gemini API** service layer.
-- 🧠 AI Tutor, quizzes & feedback via Gemini API
-- 🎮 Gamified progress tracking across 25 modules
-- 🔐 JWT-based role authentication (Student/Faculty/Admin)
-
-`React` `Spring Boot` `PostgreSQL` `Gemini API`
-
-<br/>
-
-### ✈️ [Simple Airline Reservation System](https://github.com/Ponabinanth/Simple-Airline-Reservation-System)
-<img src="./assets/airline-reservation-system.png" width="85%"/>
-
-A flight booking and reservation system with a clean front-end backed by a lightweight Python server.
-- 🎟️ Seat selection & booking flow
-- 🖥️ Lightweight Python backend
-- 💳 Booking confirmation handling
-
-`JavaScript` `HTML` `CSS` `Python`
-
-<br/>
-
-### 📦 [Inventory Management System](https://github.com/Ponabinanth/Inventory-Management-System)
-<img src="./assets/inventory-management-system.png" width="85%"/>
-
-A web-based system for tracking stock levels and streamlining inventory operations.
-- 📋 Add / update / remove stock items
-- 📈 Stock-level tracking
-- 🔍 Search & filter inventory
-
-`JavaScript` `HTML` `CSS`
-
-<br/>
-
-### 🛡️ [DDoS-Cloud — Cyber Defense Command Platform](https://github.com/Ponabinanth/DDoS-cloud)
-<img src="./assets/ddos-cloud-securechain.png" width="85%"/>
-
-A real-time threat monitoring system detecting DDoS, phishing, malware, and insider attacks, with automated response and immutable blockchain-based logging.
-- 🚨 Real-time detection of DDoS, phishing, malware & insider threats
-- 🤖 AI modules to predict threats and simulate attack scenarios
-- ⛓️ Immutable blockchain-based logging & automated response
-
-`JavaScript` `AI` `Blockchain` `Security Monitoring`
-
-<br/>
-
-### 🌾 [Farm Link — Empowering Farmers](https://github.com/Ponabinanth/Farm-Link---Empowering-Farmers-)
-<img src="./assets/farmlink-homepage.png" width="85%"/>
-
-A platform built to connect and empower farmers, bridging producers with resources and markets.
-- 🌱 Farmer-to-market connection
-- 📢 Resource & information sharing
-- 🤝 Community-driven support
-
-`JavaScript` `HTML` `CSS`
-
-<br/>
-
-### ⛓️ [BCS — SecureChain: Blockchain Document Security Platform](https://github.com/Ponabinanth/BCS)
-<img src="./assets/bcs-blockchain.png" width="85%"/>
-
-A system that hashes and stores documents on a blockchain to prevent tampering, enabling instant authenticity verification and an immutable audit trail.
-- 🔗 Document hashing & blockchain storage
-- ✅ Instant authenticity verification
-- 📜 Immutable audit trail for upload/verification operations
-
-`Blockchain` `AI` `Cybersecurity` `Full-Stack`
-
-</div>
 
 > 📌 All 6 project cards now point to local files under `assets/` — a single consistent addressing scheme. Inventory Management, DDoS-Cloud, Airline Reservation & BCS already have their images in the folder. EduReach (`assets/edureach-homepage.png`) and Farm Link (`assets/farmlink-homepage.png`) are wired up the same way but the files aren't uploaded yet — drop those two screenshots into `assets/` with those exact filenames and they'll display immediately, no README edit needed.
 
